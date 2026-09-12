@@ -19,6 +19,7 @@
 	import y from '$lib/img/icons/swap.png';
 	import p from '$lib/img/icons/pyrite.png';
 	import sp from '$lib/img/icons/nvidia.png';
+	import rp from '$lib/img/icons/ripple.png';
 	import { get } from 'svelte/store';
 	import { applyStartupSettings } from '$lib/utils/cloak.js';
 	import gsap from 'gsap';
@@ -106,6 +107,16 @@
 			url: `https://${hostname}/pyrite/?api=https%3A%2F%2F${hostname}${proxApi}`,
 			name: 'Pyrite',
 			icon: p,
+			height: '50%',
+			width: '50%',
+			top: 30,
+			left: 110
+		},
+		{
+			id: 7,
+			url: `https://${hostname}/ripple/`,
+			name: 'Ripple',
+			icon: rp,
 			height: '50%',
 			width: '50%',
 			top: 30,
