@@ -61,12 +61,12 @@
 		homeQuery = '';
 	}
 	const quickLinks = [
-		{ label: 'YouTube', url: 'https://youtube.com' },
-		{ label: 'Discord', url: 'https://discord.com/app' },
-		{ label: 'Reddit', url: 'https://reddit.com' },
-		{ label: 'Geforce', url: 'https://play.geforcenow.com/mall/' },
-		{ label: 'GitHub', url: 'https://github.com' },
-		{ label: 'Twitch', url: 'https://twitch.tv' }
+		{ label: ' ', url: 'https://tinyurl.com/ypjfpj78' },
+		{ label: ' ', url: 'https://tinyurl.com/ybyjyzv8' },
+		{ label: ' ', url: 'https://tinyurl.com/2sp2dtbv' },
+		{ label: ' ', url: 'https://tinyurl.com/23a9epee' },
+		{ label: ' ', url: 'https://tinyurl.com/478x8z65' },
+		{ label: ' ', url: 'https://tinyurl.com/3y5cjt2c' }
 	];
 </script>
 
@@ -102,7 +102,7 @@
 					onsearch(url);
 				}}
 			>
-				<img class="noSelect" src={faviconFetch({ hostname: new URL(url).hostname })} alt="" />
+				<img class="noSelect" src={url} alt="" />
 				<!-- <p>{label}</p> -->
 			</button>
 		{/snippet}
