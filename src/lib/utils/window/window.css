@@ -2,7 +2,7 @@
 	position: absolute;
 }
 .window {
-	position: absolute;
+	position: fixed;
 	display: flex;
 	flex-direction: column;
 	margin: 0px;

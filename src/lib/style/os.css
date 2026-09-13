@@ -1,13 +1,17 @@
 .background {
 	transition: all 0.3s;
+	animation: brighten 0.8s ease-in;
+	z-index: -10;
 }
+html,
 body {
 	height: 100%;
 	width: 100vw;
 	margin: 0px;
 	padding: 0px;
 	overflow: hidden;
-	animation: brighten 0.3s ease-in forwards;
+}
+html {
 }
 .topNav {
 	position: absolute;
@@ -20,6 +24,7 @@ body {
 	align-items: center;
 	padding: 0 10px 0 0px;
 	box-sizing: border-box;
+	z-index: 1;
 }
 .topNavText {
 	font-size: 15px;

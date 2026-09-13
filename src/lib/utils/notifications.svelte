@@ -34,7 +34,7 @@
 
 <style>
 	.notification {
-		position: absolute;
+		position: fixed;
 		min-width: 135px;
 		max-width: 220px;
 		padding: 12px 16px;
