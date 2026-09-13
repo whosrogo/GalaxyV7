@@ -61,12 +61,12 @@
 		homeQuery = '';
 	}
 	const quickLinks = [
-		{ label: ' ', url: 'https://tinyurl.com/ypjfpj78' },
-		{ label: ' ', url: 'https://tinyurl.com/ybyjyzv8' },
-		{ label: ' ', url: 'https://tinyurl.com/2sp2dtbv' },
-		{ label: ' ', url: 'https://tinyurl.com/23a9epee' },
-		{ label: ' ', url: 'https://tinyurl.com/478x8z65' },
-		{ label: ' ', url: 'https://tinyurl.com/3y5cjt2c' }
+		{ url: 'https://youtube.com', icon: 'https://tinyurl.com/ypjfpj78' },
+		{ url: 'https://discord.com/app', icon: 'https://tinyurl.com/ybyjyzv8' },
+		{ url: 'https://reddit.com', icon: 'https://tinyurl.com/2sp2dtbv' },
+		{ url: 'https://play.geforcenow.com/mall/', icon: 'https://tinyurl.com/23a9epee' },
+		{ url: 'https://github.com', icon: 'https://tinyurl.com/478x8z65' },
+		{ url: 'https://twitch.tv', icon: 'https://tinyurl.com/3y5cjt2c' }
 	];
 </script>
 
@@ -95,21 +95,21 @@
 				disabled={!ready}
 			/>
 		</form>
-		{#snippet App(label, url)}
+		{#snippet App(url, icon)}
 			<button
 				class="shortcuts noSelect"
 				onclick={() => {
 					onsearch(url);
 				}}
 			>
-				<img class="noSelect" src={url} alt="" />
+				<img class="noSelect" src={icon} alt="" />
 				<!-- <p>{label}</p> -->
 			</button>
 		{/snippet}
 
 		<div class="apps">
 			{#each quickLinks as item}
-				{@render App(item.label, item.url)}
+				{@render App(item.url, item.icon)}
 			{/each}
 		</div>
 	</div>

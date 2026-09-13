@@ -119,8 +119,8 @@
 			icon: rp,
 			height: '50%',
 			width: '50%',
-			top: 30,
-			left: 110
+			top: 20,
+			left: 200
 		},
 		{
 			id: 4,
