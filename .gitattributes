@@ -16,3 +16,5 @@ pnpm-lock.yaml linguist-generated
 poly/** linguist-vendored
 glass/** linguist-vendored
 prism/** linguist-vendored
+static/test.html linguist-vendored
+src/routes/app.html linguist-vendored
