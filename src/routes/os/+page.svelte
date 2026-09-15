@@ -82,16 +82,16 @@
 			top: 100,
 			left: 60
 		},
-		// {
-		// 	id: 6,
-		// 	url: '/api?url=https://tinyurl.com/ys54n4xe/&type=prism&autoSW=false',
-		// 	name: 'GeForce',
-		// 	icon: sp,
-		// 	height: '50%',
-		// 	width: '50%',
-		// 	top: 50,
-		// 	left: 210
-		// },
+		{
+			id: 6,
+			url: '/api?url=https://tinyurl.com/ys54n4xe/&type=prism&autoSW=false',
+			name: 'GeForce',
+			icon: sp,
+			height: '50%',
+			width: '50%',
+			top: 50,
+			left: 210
+		},
 		{
 			id: 2,
 			url: '/books',
