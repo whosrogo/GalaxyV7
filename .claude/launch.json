@@ -9,54 +9,6 @@
         "dev"
       ],
       "port": 5173
-    },
-    {
-      "name": "static-build",
-      "runtimeExecutable": "python",
-      "runtimeArgs": [
-        "-m",
-        "http.server",
-        "3400",
-        "--directory",
-        "C:/Users/09sha/Desktop/code/ProxyDevelopment/Galaxy/Galaxy-static-builder/build"
-      ],
-      "port": 3400
-    },
-    {
-      "name": "old-deploy",
-      "runtimeExecutable": "python",
-      "runtimeArgs": [
-        "-m",
-        "http.server",
-        "3500",
-        "--directory",
-        "C:/Users/09sha/Desktop/code/ProxyDevelopment/Galaxy/build"
-      ],
-      "port": 3500
-    },
-    {
-      "name": "verify",
-      "runtimeExecutable": "python",
-      "runtimeArgs": [
-        "-m",
-        "http.server",
-        "3600",
-        "--directory",
-        "C:/Users/09sha/Desktop/code/ProxyDevelopment/Galaxy/Galaxy-static-builder/build-verify"
-      ],
-      "port": 3600
-    },
-    {
-      "name": "subdir",
-      "runtimeExecutable": "python",
-      "runtimeArgs": [
-        "-m",
-        "http.server",
-        "3700",
-        "--directory",
-        "C:/Users/09sha/Desktop/code/ProxyDevelopment/Galaxy/Galaxy-static-builder"
-      ],
-      "port": 3700
     }
   ]
 }
