@@ -9,6 +9,18 @@
         "dev"
       ],
       "port": 5173
+    },
+    {
+      "name": "subdir",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "3700",
+        "--directory",
+        "C:/Users/09sha/Desktop/code/ProxyDevelopment/Galaxy/Galaxy-static-builder"
+      ],
+      "port": 3700
     }
   ]
 }
