@@ -283,7 +283,8 @@
 		if (from === -1) return;
 		const temp = tabs.splice(from, 1)[0];
 		const newIndex = Math.max(0, Math.min(from + ($slotsDragged ?? 0), tabs.length));
-		console.log('moving to:' + newIndex);``
+		console.log('moving to:' + newIndex);
+		``;
 		tabs.splice(newIndex, 0, temp);
 		$slotsDragged = null;
 		$draggedOverLeft = null;
@@ -449,7 +450,8 @@
 					<div class="eabt">
 						<p class="enm">Popup Inter<span class="filler">ha67</span>ceptor</p>
 						<p class="edsc">
-							Intercepts popup requests and opens them in Ga<span class="filler">ha67</span>laxy instead of the native browser.
+							Intercepts popup requests and opens them in Ga<span class="filler">ha67</span>laxy
+							instead of the native browser.
 						</p>
 					</div>
 					<button
@@ -473,7 +475,9 @@
 			<div class="sovl" onclick={toggleSettings}></div>
 			<div class="sdrop">
 				<button class="mbtn" onclick={addTab}>New Ta<span class="filler">ha67</span>b</button>
-				<button class="mbtn" onclick={startBookmark}>Book<span class="filler">ha67</span>mark Site</button>
+				<button class="mbtn" onclick={startBookmark}
+					>Book<span class="filler">ha67</span>mark Site</button
+				>
 				<div class="break"></div>
 				<p>Pr<span class="filler">ha67</span>oxy</p>
 				<select bind:value={letheEngine} disabled={!ready}>
