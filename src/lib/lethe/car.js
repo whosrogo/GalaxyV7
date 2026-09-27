@@ -5,9 +5,9 @@ export function getWispUrl(custom) {
 	} else {
 		protocol = location.protocol === 'https:' ? 'wss' : 'ws';
 		if (protocol === 'wss') {
-			return `${protocol}://${location.host}/whoot/`;
+			return `${protocol}://${location.host}/jsonn/`;
 		} else {
-			return `${protocol}://${location.host}/whoot/`;
+			return `${protocol}://${location.host}/jsonn/`;
 		}
 	}
 }
