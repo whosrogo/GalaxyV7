@@ -95,6 +95,7 @@
 		object-fit: cover;
 		display: block;
 		transition-duration: 0.2s;
+		filter: brightness(0.98);
 	}
 	.bookDiv:hover .bookImg,
 	.bookDiv:focus-visible .bookImg {
@@ -123,7 +124,7 @@
 		flex-direction: column;
 		gap: 2px;
 		padding: 28px 16px 12px;
-		background: linear-gradient(to top, var(--color-scrim-strong), transparent);
+		height: auto;
 	}
 	.bookName {
 		opacity: 0;
