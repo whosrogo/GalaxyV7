@@ -716,7 +716,7 @@
 		}}
 	>
 		{#each getPreviewWindows() as win}
-			<button class="previewCard" onclick={() => focusWindow(win.sender)}>
+			<button class="previewCard noSelect" onclick={() => focusWindow(win.sender)}>
 				<p>{win.name}</p>
 			</button>
 		{/each}

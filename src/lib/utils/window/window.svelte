@@ -383,6 +383,7 @@
 			setTop();
 			activeSignal.set(sender);
 		} else {
+			setTop();
 			minimizedStat = !minimizedStat;
 			setMinimizedFlag(minimizedStat);
 			if (minimizedStat) {
@@ -407,7 +408,6 @@
 						duration: 0.3,
 						onStart: function () {
 							document.getElementById(id).style.display = 'flex';
-							setTop();
 						}
 					}
 				);

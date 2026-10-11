@@ -47,11 +47,11 @@ function goToDecoything() {
 //ab
 export function openAboutBlank() {
 	if (!browser) return false;
-	const win = window.open('about:blank', '_blank');
+	const win = window.open('about:blank#', '');
 	if (!win) return false;
 	win.document.documentElement.innerHTML = cloakMarkup({ fixedIframe: false });
 	win.document.close();
-	goToDecoything();
+	// goToDecoything();
 	return true;
 }
 // blob
