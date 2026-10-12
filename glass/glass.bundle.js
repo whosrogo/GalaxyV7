@@ -17615,13 +17615,13 @@
       if (r instanceof AggregateError)
         throw (
           console.error(
-            "bare-mux: failed to get a bare-mux SharedWorker MessagePort as all clients returned an invalid MessagePort.",
+            "mux: failed to get a mux SharedWorker MessagePort as all clients returned an invalid MessagePort.",
           ),
           new Error("All clients returned an invalid MessagePort.")
         );
       return (
         console.warn(
-          "bare-mux: failed to get a bare-mux SharedWorker MessagePort within 1s, retrying",
+          "mux: failed to get a mux SharedWorker MessagePort within 1s, retrying",
         ),
         await yn()
       );
@@ -17641,13 +17641,13 @@
     );
   }
   function ps(e, t) {
-    let r = new Es(e, "bare-mux-worker");
+    let r = new Es(e, "mux-worker");
     return (
       t &&
         J0.addEventListener("message", (n) => {
           if (n.data.type === "getPort" && n.data.port) {
-            console.debug("bare-mux: recieved request for port from sw");
-            let u = new Es(e, "bare-mux-worker");
+            console.debug("mux: recieved request for port from sw");
+            let u = new Es(e, "mux-worker");
             xt.call(n.data.port, u.port, [u.port]);
           }
         }),
@@ -17656,7 +17656,7 @@
   }
   var Dn = class {
       constructor(t) {
-        ((this.channel = new BroadcastChannel("bare-mux")),
+        ((this.channel = new BroadcastChannel("mux")),
           t instanceof MessagePort || t instanceof Promise
             ? (this.port = t)
             : this.createChannel(t, !0));
@@ -17673,19 +17673,19 @@
               "Invalid URL. Must be absolute or start at the root.",
             );
           ((this.port = ps(t, r)),
-            console.debug("bare-mux: setting localStorage bare-mux-path to", t),
-            (Ts["bare-mux-path"] = t));
+            console.debug("mux: setting localStorage mux-path to", t),
+            (Ts["mux-path"] = t));
         } else {
           if (!SharedWorker)
             throw new Error("Unable to get a channel to the SharedWorker.");
           {
-            let n = Ts["bare-mux-path"];
+            let n = Ts["mux-path"];
             if (
-              (console.debug("bare-mux: got localStorage bare-mux-path:", n),
+              (console.debug("mux: got localStorage mux-path:", n),
               !n)
             )
               throw new Error(
-                "Unable to get bare-mux workerPath from localStorage.",
+                "Unable to get mux workerPath from localStorage.",
               );
             this.port = ps(n, r);
           }
@@ -17698,7 +17698,7 @@
         } catch {
           return (
             console.warn(
-              "bare-mux: Failed to get a ping response from the worker within 1.5s. Assuming port is dead.",
+              "mux: Failed to get a ping response from the worker within 1.5s. Assuming port is dead.",
             ),
             this.createChannel(),
             await this.sendMessage(t, r)
@@ -17880,7 +17880,7 @@
       }
     }
   };
-  console.debug("bare-mux: running v2.1.6 (build 4b7607b)");
+  console.debug("mux: running v2.1.6 (build 4b7607b)");
   var gs = We(rt(), 1),
     _r = class e {
       constructor(t = {}) {
@@ -17996,9 +17996,9 @@
       static codec = { xor: Va, base64: Ga, plain: Ya };
       static setCookie = wn.default;
       static openDB = hs;
-      static BareClient = Ar;
+      static MuxClient = Ar;
       static EventEmitter = gs.default;
     },
     S1 = _r;
-  typeof self == "object" && (self.Selenite = _r);
+  typeof self == "object" && (self.Fathom = _r);
 })();

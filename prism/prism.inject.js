@@ -247,7 +247,7 @@ var $cinnabarController;
 				const o = new MessageChannel();
 				((this.transport = new a(o.port1)),
 					c?.postMessage(
-						{ $sw$initRemoteTransport: { port: o.port2, prefix: this.init.prefix.href } },
+						{ $sw$linkup: { port: o.port2, prefix: this.init.prefix.href } },
 						[o.port2]
 					),
 					(this.cookieJar = new i.cP()),
@@ -267,7 +267,7 @@ var $cinnabarController;
 						}
 						if ('string' == typeof t.id) {
 							let e = navigator.serviceWorker?.controller ?? c;
-							e?.postMessage({ $sw$setCookieDone: { id: t.id } });
+							e?.postMessage({ $sw$ckdone: { id: t.id } });
 						}
 					}),
 					navigator.serviceWorker?.addEventListener(

@@ -3,7 +3,7 @@ importScripts("/glass/glass.config.js");
 importScripts("/glass/glass.sw.js");
 importScripts("/poly/polygon.all.js");
 importScripts("/hive/prism.sw.js");
-const glass = new SeleniteServiceWorker();
+const glass = new FathomServiceWorker();
 const { CinnabarServiceWorker } = $cinnabarLoadWorker();
 const cinnabar = new CinnabarServiceWorker();
 

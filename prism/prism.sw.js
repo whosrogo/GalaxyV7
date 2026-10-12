@@ -87,13 +87,13 @@ var $cinnabarController;
 		let t = {};
 		addEventListener('message', (e) => {
 			if (e.data && 'object' == typeof e.data) {
-				if (e.data.$sw$setCookieDone && 'object' == typeof e.data.$sw$setCookieDone) {
-					let r = e.data.$sw$setCookieDone,
+				if (e.data.$sw$ckdone && 'object' == typeof e.data.$sw$ckdone) {
+					let r = e.data.$sw$ckdone,
 						o = t[r.id];
 					o && (o(), delete t[r.id]);
 				}
-				if (e.data.$sw$initRemoteTransport && 'object' == typeof e.data.$sw$initRemoteTransport) {
-					let { port: t, prefix: r } = e.data.$sw$initRemoteTransport,
+				if (e.data.$sw$linkup && 'object' == typeof e.data.$sw$linkup) {
+					let { port: t, prefix: r } = e.data.$sw$linkup,
 						o = i.find((e) => new URL(r).pathname.startsWith(e.prefix));
 					if (!o) return void console.error('No relevant controller found for transport init');
 					o.rpc.call('initRemoteTransport', t, [t]);
@@ -213,11 +213,11 @@ var $cinnabarController;
 			if (
 				!e.data ||
 				'object' != typeof e.data ||
-				!e.data.$controller$init ||
-				'object' != typeof e.data.$controller$init
+				!e.data.$ctl$boot ||
+				'object' != typeof e.data.$ctl$boot
 			)
 				return;
-			let t = e.data.$controller$init,
+			let t = e.data.$ctl$boot,
 				r = i.findIndex((e) => e.id === t.id);
 			(-1 !== r && i.splice(r, 1), i.push(new s(t.prefix, t.id, e.ports[0])));
 		}),

@@ -300,7 +300,7 @@
                       addEventListener("message", ({ data: t }) => {
                         "object" == typeof t &&
                           "$cinnabar$type" in t &&
-                          "baremuxinit" === t.$cinnabar$type &&
+                          "muxinit" === t.$cinnabar$type &&
                           e(t.port);
                       });
                     }),
@@ -2847,7 +2847,7 @@
                 e.natives.call(
                   "Worker.prototype.postMessage",
                   r,
-                  { $cinnabar$type: "baremuxinit", port: t },
+                  { $cinnabar$type: "muxinit", port: t },
                   [t],
                 );
               })();
@@ -2873,7 +2873,7 @@
                   e.natives.call(
                     "MessagePort.prototype.postMessage",
                     r.port,
-                    { $cinnabar$type: "baremuxinit", port: t },
+                    { $cinnabar$type: "muxinit", port: t },
                     [t],
                   );
                 })();
@@ -5148,13 +5148,13 @@ self.WASM = '${r}';`),
             if (e instanceof AggregateError)
               throw (
                 console.error(
-                  "bare-mux: failed to get a bare-mux SharedWorker MessagePort as all clients returned an invalid MessagePort.",
+                  "mux: failed to get a mux SharedWorker MessagePort as all clients returned an invalid MessagePort.",
                 ),
                 Error("All clients returned an invalid MessagePort.")
               );
             return (
               console.warn(
-                "bare-mux: failed to get a bare-mux SharedWorker MessagePort within 1s, retrying",
+                "mux: failed to get a mux SharedWorker MessagePort within 1s, retrying",
               ),
               await c()
             );
@@ -5174,13 +5174,13 @@ self.WASM = '${r}';`),
           );
         }
         function d(e, t) {
-          let r = new i(e, "bare-mux-worker");
+          let r = new i(e, "mux-worker");
           return (
             t &&
               s.addEventListener("message", (t) => {
                 if ("getPort" === t.data.type && t.data.port) {
-                  console.debug("bare-mux: recieved request for port from sw");
-                  let r = new i(e, "bare-mux-worker");
+                  console.debug("mux: recieved request for port from sw");
+                  let r = new i(e, "mux-worker");
                   o.call(t.data.port, r.port, [r.port]);
                 }
               }),
@@ -5190,7 +5190,7 @@ self.WASM = '${r}';`),
         let h = null;
         class p {
           constructor(e) {
-            ((this.channel = new BroadcastChannel("bare-mux")),
+            ((this.channel = new BroadcastChannel("mux")),
               e instanceof MessagePort || e instanceof Promise
                 ? (this.port = e)
                 : this.createChannel(e, !0));
@@ -5208,24 +5208,24 @@ self.WASM = '${r}';`),
                 );
               ((this.port = d(e, t)),
                 console.debug(
-                  "bare-mux: setting localStorage bare-mux-path to",
+                  "mux: setting localStorage mux-path to",
                   e,
                 ),
-                (a["bare-mux-path"] = e));
+                (a["mux-path"] = e));
             } else {
               if (!SharedWorker)
                 throw Error("Unable to get a channel to the SharedWorker.");
               {
-                let e = a["bare-mux-path"];
+                let e = a["mux-path"];
                 if (
                   (console.debug(
-                    "bare-mux: got localStorage bare-mux-path:",
+                    "mux: got localStorage mux-path:",
                     e,
                   ),
                   !e)
                 )
                   throw Error(
-                    "Unable to get bare-mux workerPath from localStorage.",
+                    "Unable to get mux workerPath from localStorage.",
                   );
                 this.port = d(e, t);
               }
@@ -5238,7 +5238,7 @@ self.WASM = '${r}';`),
             } catch {
               return (
                 console.warn(
-                  "bare-mux: Failed to get a ping response from the worker within 1.5s. Assuming port is dead.",
+                  "mux: Failed to get a ping response from the worker within 1.5s. Assuming port is dead.",
                 ),
                 this.createChannel(),
                 await this.sendMessage(e, t)
@@ -5354,7 +5354,7 @@ self.WASM = '${r}';`),
             );
           }
           async setManualTransport(e, t, r) {
-            if ("bare-mux-remote" === e) throw Error("Use setRemoteTransport.");
+            if ("mux-remote" === e) throw Error("Use setRemoteTransport.");
             await this.worker.sendMessage(
               { type: "set", client: { function: e, args: t } },
               r,
@@ -5458,7 +5458,7 @@ self.WASM = '${r}';`),
               await this.worker.sendMessage(
                 {
                   type: "set",
-                  client: { function: "bare-mux-remote", args: [r.port2, t] },
+                  client: { function: "mux-remote", args: [r.port2, t] },
                 },
                 [r.port2],
               ));
@@ -5556,7 +5556,7 @@ self.WASM = '${r}';`),
             }
           }
         }
-        console.debug("bare-mux: running v2.1.7 (build c56d286)");
+        console.debug("mux: running v2.1.7 (build c56d286)");
       },
       8832: function (e, t, r) {
         r.d(t, { H: () => n, L: () => i });

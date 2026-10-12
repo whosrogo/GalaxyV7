@@ -619,7 +619,7 @@ var $cinnabarController;
 							(t.options?.clear && this.cookieJar.clear(),
 								this.applyCookieSyncEntries(t.cookies),
 								'string' == typeof t.id &&
-									this.serviceWorkerController.postMessage({ $sw$setCookieDone: { id: t.id } }));
+									this.serviceWorkerController.postMessage({ $sw$ckdone: { id: t.id } }));
 							return;
 						}
 						if (e.data.$controller$swrevive) {
@@ -641,7 +641,7 @@ var $cinnabarController;
 					this.port.addEventListener('message', this.onTabChannelMessage),
 					this.port.start(),
 					this.serviceWorkerController.postMessage(
-						{ $controller$init: { prefix: this.prefix, id: this.id } },
+						{ $ctl$boot: { prefix: this.prefix, id: this.id } },
 						[e.port2]
 					));
 			}

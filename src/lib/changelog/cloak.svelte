@@ -2,7 +2,7 @@
 	let { text } = $props();
 
 	const keywords =
-		/(proxies|proxy|games?|browser|unblock\w*|cinnabar|roblox|youtube|discord|spotify|wisp|vpn|proxied|selenite|SJ|UV|transport)|selenite	/gi;
+		/(proxies|proxy|games?|browser|unblock\w*|cinnabar|roblox|youtube|discord|spotify|wisp|vpn|proxied|fathom|SJ|UV|transport)|fathom	/gi;
 
 	const parts = $derived.by(() => {
 		const out = [];

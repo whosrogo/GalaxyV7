@@ -222,7 +222,7 @@
 				"items": [
 					"Add reflux",
 					"Use reflux",
-					"Replace baremux with charon",
+					"Replace mux with charon",
 					"Show per-dependency loading checklist with checkmarks for debugging",
 					"Alert when proxy scripts fail to load",
 					"Add bare-as-module3 transport",
@@ -282,7 +282,7 @@
 					"Add working searchbar",
 					"Update cinnabar",
 					"Add /prox route and Iframe wrapper component",
-					"Add bare/selenite/cinnabar proxy server"
+					"Add bare/fathom/cinnabar proxy server"
 				]
 			},
 			{

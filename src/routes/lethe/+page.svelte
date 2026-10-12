@@ -158,7 +158,7 @@
 	<select bind:value={letheEngine} disabled={!ready}>
 		<option value="cinnabar">Cinnabar</option>
 		<option value="prism">Cinnabar v2</option>
-		<option value="uv">Selenite</option>
+		<option value="uv">Fathom</option>
 	</select>
 	<select bind:value={car} disabled={!ready}>
 		<option value="libcurl">Libcurl</option>
