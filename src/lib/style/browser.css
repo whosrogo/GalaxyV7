@@ -6,7 +6,7 @@ body {
 	margin: 0px;
 	background-color: var(--color-bg);
 }
-.tstrip {
+.tab-bar {
 	height: 46px;
 	display: flex;
 	flex-direction: row;
@@ -14,27 +14,27 @@ body {
 	padding-left: 3px;
 	padding-right: 3px;
 }
-.nrow {
-	height: 40px;
+.nav-bar {
+	height: 45px;
 	display: flex;
 	flex-direction: row;
 	background-color: var(--color-surface-2);
 }
-.nl {
+.nav-left {
 	margin: 0px 5px;
 	gap: 2px;
 }
-.nm {
+.nav-middle {
 	flex-grow: 1;
 }
-.nr {
+.nav-right {
 	gap: 2px;
 	margin: 0px 5px;
 	position: relative;
 }
-.nl,
-.nm,
-.nr {
+.nav-left,
+.nav-middle,
+.nav-right {
 	display: flex;
 	align-items: center;
 	padding-left: 3px;
@@ -93,11 +93,11 @@ form {
 .star:hover {
 	background-color: var(--overlay-hover);
 }
-.sic {
+.starIcon {
 	filter: brightness(0.8);
 	height: 15px;
 }
-.nic {
+.nav-icon {
 	height: 20px;
 	width: auto;
 	margin-top: 0px;
@@ -118,7 +118,7 @@ form {
 .button:hover {
 	background-color: var(--overlay-hover-strong);
 }
-.sovl {
+.settings-overlay {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -126,7 +126,7 @@ form {
 	height: 100vh;
 	z-index: 99;
 }
-.bpanel {
+.bookmarkContainer {
 	position: absolute;
 	top: 78px;
 	right: 90px;
@@ -143,21 +143,21 @@ form {
 	transform-origin: top right;
 	animation: settings-pop 0.13s ease-out;
 }
-.btl {
+.bookmarkTitle {
 	margin: 0 0 10px;
 	font-size: 14px;
 	font-weight: 600;
 	font-family: var(--font-family-body);
 	color: var(--color-text);
 }
-.blb {
+.bookmarkLabel {
 	margin: 8px 2px 5px;
 	font-size: 11px;
 	font-family: var(--font-family-body);
 	letter-spacing: 0.05em;
 	color: var(--color-text-subtle);
 }
-.binp {
+.bookmark-input {
 	width: 100%;
 	height: 32px;
 	margin: 0;
@@ -172,7 +172,7 @@ form {
 	box-sizing: border-box;
 	transition: border-color 0.15s ease;
 }
-.binp:focus {
+.bookmark-input:focus {
 	border-color: var(--color-border-strong);
 }
 .flex {
@@ -183,13 +183,13 @@ form {
 	gap: 10px;
 	margin-top: 14px;
 }
-.rth {
+.randomthing {
 	margin: 0;
 	font-size: 11px;
 	font-family: var(--font-family-body);
 	color: var(--color-text-subtle);
 }
-.bdn {
+.bookmarkDone {
 	padding: 6px 12px;
 	border: none;
 	border-radius: 8px;
@@ -197,11 +197,11 @@ form {
 	color: var(--color-text);
 	transition-duration: 0.15s;
 }
-.bdn:hover {
+.bookmarkDone:hover {
 	background-color: var(--overlay-hover);
 	color: var(--color-white);
 }
-.epanel {
+.extensionContainer {
 	position: absolute;
 	top: calc(100% + 6px);
 	right: 35px;
@@ -218,7 +218,7 @@ form {
 	transform-origin: top right;
 	animation: settings-pop 0.13s ease-out;
 }
-.eblk {
+.extensionBlock {
 	padding: 8px 10px;
 	border-radius: 8px;
 	background-color: transparent;
@@ -234,24 +234,24 @@ form {
 	justify-content: space-between;
 	gap: 12px;
 }
-.eabt {
+.aboutExtension {
 	flex: 1;
 	min-width: 0;
 }
-.enm {
+.extensionName {
 	font-weight: 600;
 	color: var(--color-text);
 }
-.edsc {
+.extensionDesc {
 	margin-top: 4px;
 	font-size: 11px;
 	color: var(--color-text-subtle);
 }
-.eblk:hover {
+.extensionBlock:hover {
 	background-color: var(--overlay-hover);
 	color: var(--color-white);
 }
-.etg {
+.extensionToggle {
 	flex-shrink: 0;
 	position: relative;
 	width: 38px;
@@ -263,10 +263,10 @@ form {
 	cursor: pointer;
 	transition: background-color 0.15s ease;
 }
-.etg.on {
+.extensionToggle.on {
 	background-color: var(--color-pin);
 }
-.tknob {
+.toggleKnob {
 	position: absolute;
 	top: 3px;
 	left: 3px;
@@ -276,10 +276,10 @@ form {
 	background-color: var(--color-white);
 	transition: transform 0.15s ease;
 }
-.etg.on .tknob {
+.extensionToggle.on .toggleKnob {
 	transform: translateX(16px);
 }
-.sdrop {
+.settings-dropdown {
 	position: absolute;
 	top: calc(100% + 6px);
 	right: 0;
@@ -306,7 +306,7 @@ form {
 		transform: scale(1) translateY(0);
 	}
 }
-.vwrap {
+.frameContainer {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
@@ -339,10 +339,10 @@ form {
 	border-top: 1px solid var(--color-border);
 	margin: 6px 4px;
 }
-.mbtn {
+.menuBtn {
 	background-color: transparent;
 }
-.sdrop button {
+.settings-dropdown button {
 	margin: 0;
 	padding: 8px 10px;
 	border: none;
@@ -355,19 +355,19 @@ form {
 	cursor: pointer;
 	transition-duration: 0.15s;
 }
-.sdrop button:hover {
+.settings-dropdown button:hover {
 	background-color: var(--overlay-hover);
 	color: var(--color-white);
 }
-.sdrop p {
+.settings-dropdown p {
 	margin: 8px 6px 4px;
 	font-size: 12px;
 	font-family: Arial, Helvetica, sans-serif;
 	letter-spacing: 0.03em;
 	color: var(--color-text-subtle);
 }
-.sdrop select,
-.sdrop input {
+.settings-dropdown select,
+.settings-dropdown input {
 	margin: 0 6px 4px;
 	height: 28px;
 	padding: 0 8px;
@@ -380,10 +380,10 @@ form {
 	outline: none;
 	box-sizing: border-box;
 }
-.sdrop select {
+.settings-dropdown select {
 	cursor: pointer;
 }
-.sdrop select option {
+.settings-dropdown select option {
 	background-color: var(--color-surface-3);
 }
 .bookmarks {
@@ -414,7 +414,7 @@ form {
 .mark:active {
 	background-color: var(--overlay-hover-strong);
 }
-.mnm {
+.markName {
 	font-family: var(--font-family-body);
 	color: var(--color-text-muted);
 	font-size: 11px;
@@ -423,6 +423,6 @@ form {
 	white-space: nowrap;
 	transition: color 0.15s ease;
 }
-.mark:hover .mnm {
+.mark:hover .markName {
 	color: var(--color-text);
 }

@@ -122,16 +122,20 @@
 		</div>
 	</div>
 	{#if id == $activeTab}
-		<div class="bottom-right" style="background-color: {bgColor};"></div>
-		<div class="bottom-left" style="background-color: {bgColor};"></div>
+		<svg class="bottom-left" viewBox="0 0 15 15" aria-hidden="true" style="fill: {bgColor};">
+			<path d="M0 0V15H15A15 15 0 0 1 0 0Z" />
+		</svg>
+		<svg class="bottom-right" viewBox="0 0 15 15" aria-hidden="true" style="fill: {bgColor};">
+			<path d="M0 0V15H15A15 15 0 0 1 0 0Z" />
+		</svg>
 	{/if}
 </div>
 
 <style>
 	.tab {
 		position: relative;
-		height: 35px;
-		width: 210px;
+		height: 32px;
+		width: 190px;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -164,18 +168,18 @@
 	.bottom-right,
 	.bottom-left {
 		position: absolute;
-		margin-top: 19px;
-		width: 200px;
-		height: 200px;
-		clip-path: path('M 20 20 L 20 180 L 140 180 C 85 180 55 170 40 145 C 25 120 20 80 20 20 Z');
+		bottom: 0;
+		width: 12px;
+		height: 12px;
+		z-index: -1;
+		pointer-events: none;
 	}
 	.bottom-right {
-		margin-left: calc(100% + 16px);
-		transform: scale(0.1);
+		left: 100%;
 	}
 	.bottom-left {
-		margin-left: calc(-100% - 16px);
-		transform: scale(0.1) scaleX(-1);
+		right: 100%;
+		transform: scaleX(-1);
 	}
 	.title {
 		color: var(--color-text-subtle);
@@ -184,7 +188,7 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
-		font-weight: 900;
+		font-weight: 300;
 	}
 	.tab.active .title {
 		color: var(--color-text);
