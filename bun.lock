@@ -37,6 +37,7 @@
   },
   "patchedDependencies": {
     "@mercuryworkshop/libcurl-transport@1.5.2": "patches/@mercuryworkshop%2Flibcurl-transport@1.5.2.patch",
+    "@mercuryworkshop/bare-mux@2.1.9": "patches/@mercuryworkshop%2Fbare-mux@2.1.9.patch",
   },
   "packages": {
     "@devmischief/shaders-svelte": ["@devmischief/shaders-svelte@0.0.9", "", { "dependencies": { "@paper-design/shaders": "^0.0.76" }, "peerDependencies": { "svelte": "^5.0.0" } }, "sha512-l/8JU60fVk7CCP1jr99Qh4Ze/fc2Vh90PT3mCMFotwR+2S3ZM0HeNlasNjHcCI34XS4asORJtESxZmeprGz/TQ=="],

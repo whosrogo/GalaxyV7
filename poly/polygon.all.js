@@ -5070,7 +5070,10 @@ self.WASM = '${r}';`),
                       "cookies",
                     );
                   }
-                  "loadConfig" === e.cinnabar$type && (this.config = e.config);
+                  if ("loadConfig" === e.cinnabar$type) {
+                    this.config = e.config;
+                    this.config && ((0, c.Nk)(this.config), await (0, s.n$)());
+                  }
                 }
               }));
           }

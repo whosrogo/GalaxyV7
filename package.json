@@ -44,6 +44,7 @@
 		"origin-snapshot": "^0.1.2"
 	},
 	"patchedDependencies": {
-		"@mercuryworkshop/libcurl-transport@1.5.2": "patches/@mercuryworkshop%2Flibcurl-transport@1.5.2.patch"
+		"@mercuryworkshop/libcurl-transport@1.5.2": "patches/@mercuryworkshop%2Flibcurl-transport@1.5.2.patch",
+		"@mercuryworkshop/bare-mux@2.1.9": "patches/@mercuryworkshop%2Fbare-mux@2.1.9.patch"
 	}
 }
