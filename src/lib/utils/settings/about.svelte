@@ -108,7 +108,7 @@
 		<div class="content">
 			<div class="infoRows">
 				<div class="infoRow">
-					<span class="infoKey">DC User</span>
+					<span class="infoKey">Dis<span class="filler">ha67</span>cord User</span>
 					<span class="infoVal">rogo7070</span>
 				</div>
 				<div class="infoRow">

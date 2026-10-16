@@ -51,7 +51,7 @@ export function openAboutBlank() {
 	if (!win) return false;
 	win.document.documentElement.innerHTML = cloakMarkup({ fixedIframe: false });
 	win.document.close();
-	// goToDecoything();
+	goToDecoything();
 	return true;
 }
 // blob
