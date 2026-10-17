@@ -107,7 +107,7 @@
 				loadSetting('lethe', 'sj2'),
 				loadSetting('car', 'libcurl'),
 				loadSetting('customWisp', ''),
-				loadSetting('searchEngine', 'brave'),
+				loadSetting('searchEngine', 'ddg'),
 				loadSetting('bookmarks', [], JSON.parse),
 				loadSetting('popupInterceptor', true, (raw) => raw === 'true'),
 				loadSetting('LastPopupIntState', true)
