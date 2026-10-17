@@ -1,4 +1,5 @@
 import { RefluxAPI } from '@nightnetwork/reflux/api';
+import { isPopupInterceptorExcluded, popupInterceptorExcludedDomains } from './popupExclusions.js';
 const api = new RefluxAPI();
 
 export const newTabEventName = '__galaxyNewTab';
@@ -10,6 +11,12 @@ export async function enablePopupInterceptor() {
 		function: `
     /* @browser */
     (function () {
+      const excludedDomains = ${JSON.stringify(popupInterceptorExcludedDomains)};
+      const isExcluded = ${isPopupInterceptorExcluded.toString()};
+      window.__galaxyPopupInterceptorExcluded = isExcluded(url, excludedDomains);
+      if (window.__galaxyPopupInterceptorExcluded) {
+        return;
+      }
       if (window.__galaxyWindowOpenHooked) {
         return;
       }
@@ -29,8 +36,12 @@ export async function enablePopupInterceptor() {
           return window;
         }
       }
-      function isEnabled() {
+      function isEnabled(sourceWindow = window) {
         try {
+          if (sourceWindow.__galaxyPopupInterceptorExcluded ||
+              isExcluded(sourceWindow.location.href, excludedDomains)) {
+            return false;
+          }
           let target = deliveryTarget();
           if (target.__galaxyInterceptEnabled === false) {
             return false;
@@ -98,13 +109,17 @@ export async function enablePopupInterceptor() {
           if (!targetWindow) {
             return;
           }
+          if (targetWindow.__galaxyPopupInterceptorExcluded ||
+              isExcluded(targetWindow.location.href, excludedDomains)) {
+            return;
+          }
           if (targetWindow.__galaxyOpenHooked) {
             return;
           }
           targetWindow.__galaxyOpenHooked = true;
           let nativeOpen = targetWindow.open;
           targetWindow.open = function (url, name, features) {
-            if (!isEnabled()) {
+            if (!isEnabled(targetWindow)) {
               return nativeOpen.apply(targetWindow, arguments);
             }
             emitNewTab(url);

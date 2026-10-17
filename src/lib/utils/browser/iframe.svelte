@@ -2,6 +2,10 @@
 	import { activeTab, reloadSignal, goBackSignal, goForwardSignal } from '$lib/stores/index.js';
 	import { getOriginalUrl } from '$lib/lethe/decode';
 	import { newTabEventName, newTabQueueName } from '$lib/lethe/reflux';
+	import {
+		isPopupInterceptorExcluded,
+		popupInterceptorExcludedDomains
+	} from '$lib/lethe/popupExclusions.js';
 	let { id, src = null, onnavigate, onnewtab, interceptEnabled = true } = $props();
 	let frame;
 
@@ -59,9 +63,20 @@
 			return String(rawUrl);
 		}
 	}
+	function isExcluded(targetWindow) {
+		return isPopupInterceptorExcluded(frameBase(targetWindow), popupInterceptorExcludedDomains);
+	}
+
+	function shouldIntercept(targetWindow) {
+		return interceptEnabled && !isExcluded(targetWindow);
+	}
+
 	function installHostInterception(targetWindow) {
 		try {
 			if (!targetWindow) {
+				return;
+			}
+			if (isExcluded(targetWindow)) {
 				return;
 			}
 			if (targetWindow.__galaxyHostHooked) {
@@ -100,7 +115,7 @@
 			const nativeOpen = targetWindow.open;
 			try {
 				targetWindow.open = function (url) {
-					if (!interceptEnabled) {
+					if (!shouldIntercept(targetWindow)) {
 						return nativeOpen.apply(targetWindow, arguments);
 					}
 					openTabForUrl(url);
@@ -118,7 +133,7 @@
 					const originalAnchorClick = anchorPrototype.click;
 					anchorPrototype.click = function () {
 						try {
-							if (interceptEnabled && this && this.target === '_blank' && this.href) {
+							if (shouldIntercept(targetWindow) && this && this.target === '_blank' && this.href) {
 								openTabForUrl(this.href);
 								return;
 							}
@@ -142,7 +157,7 @@
 			frameDocument.addEventListener(
 				'click',
 				function (clickEvent) {
-					if (!interceptEnabled) {
+					if (!shouldIntercept(targetWindow)) {
 						return;
 					}
 					if (clickEvent.defaultPrevented) {
@@ -178,7 +193,7 @@
 			frameDocument.addEventListener(
 				'auxclick',
 				function (auxClickEvent) {
-					if (!interceptEnabled) {
+					if (!shouldIntercept(targetWindow)) {
 						return;
 					}
 					if (auxClickEvent.button !== 1) {
@@ -198,7 +213,7 @@
 			frameDocument.addEventListener(
 				'mousedown',
 				function (mouseDownEvent) {
-					if (!interceptEnabled) {
+					if (!shouldIntercept(targetWindow)) {
 						return;
 					}
 					if (mouseDownEvent.button !== 1) {
@@ -216,7 +231,7 @@
 			frameDocument.addEventListener(
 				'submit',
 				function (submitEvent) {
-					if (!interceptEnabled) {
+					if (!shouldIntercept(targetWindow)) {
 						return;
 					}
 					const form = submitEvent.target;
@@ -243,7 +258,7 @@
 		reportUrl();
 		try {
 			const win = frame.contentWindow;
-			win.__galaxyInterceptEnabled = interceptEnabled;
+			win.__galaxyInterceptEnabled = shouldIntercept(win);
 			installHostInterception(win);
 			win.addEventListener('popstate', reportUrl);
 			win.addEventListener('hashchange', reportUrl);
@@ -256,12 +271,12 @@
 			if (Array.isArray(pendingUrls)) {
 				while (pendingUrls.length > 0) {
 					const pendingUrl = pendingUrls.shift();
-					if (onnewtab) {
+					if (shouldIntercept(win) && onnewtab) {
 						onnewtab(pendingUrl);
 					}
 				}
 			}
-	
+
 			if (!win.__galaxyNewTabBound) {
 				win.__galaxyNewTabBound = true;
 				win.addEventListener(newTabEventName, function (messageEvent) {
@@ -269,7 +284,7 @@
 					if (messageEvent && messageEvent.detail) {
 						newTabUrl = messageEvent.detail.url;
 					}
-					if (onnewtab) {
+					if (shouldIntercept(win) && onnewtab) {
 						onnewtab(newTabUrl);
 					}
 				});
@@ -300,7 +315,7 @@
 	$effect(() => {
 		try {
 			if (frame && frame.contentWindow) {
-				frame.contentWindow.__galaxyInterceptEnabled = interceptEnabled;
+				frame.contentWindow.__galaxyInterceptEnabled = shouldIntercept(frame.contentWindow);
 			}
 		} catch (e) {}
 	});

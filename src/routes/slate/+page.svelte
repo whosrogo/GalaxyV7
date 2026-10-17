@@ -182,13 +182,6 @@
 			encoded = polygon.encodeUrl(fixedUrl);
 		}
 		activeFrame.url = encoded;
-		if (rawQuery.includes('discord')) {
-			LastPopupIntState = popupInterceptor;
-			popupInterceptor = false;
-		}
-		if (!rawQuery.includes('discord')) {
-			popupInterceptor = LastPopupIntState;
-		}
 	}
 
 	let lastOpenedUrl = '';
