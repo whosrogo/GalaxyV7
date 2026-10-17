@@ -47,6 +47,7 @@
 	const searchEngines = [
 		{ value: 'google', label: 'Google' },
 		{ value: 'ddg', label: 'DuckDuckGo' },
+		{ value: 'ecosia', label: 'Ecosia' },
 		{ value: 'brave', label: 'Brave' }
 	];
 	const transports = [

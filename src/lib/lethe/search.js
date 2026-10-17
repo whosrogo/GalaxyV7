@@ -1,6 +1,8 @@
 export function search(input, template) {
 	let searchEngine;
-	if (template == 'ddg') {
+	if (template == 'ecosia') {
+		searchEngine = 'https://www.ecosia.org/search?q=%s';
+	} else if (template == 'ddg') {
 		searchEngine = 'https://www.duckduckgo.com/search?q=%s';
 	} else if (template == 'google') {
 		searchEngine = 'https://google.com/search?q=%s';
