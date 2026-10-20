@@ -16,13 +16,14 @@
 	});
 </script>
 
-{#each segments as s, i (i)}{s.chunk}{#if s.filler}<span class="filler" aria-hidden="true">{s.filler}</span>{/if}{/each}
+{#each segments as s, i (i)}{s.chunk}{#if s.filler}<span class="filler" aria-hidden="true"
+			>{s.filler}</span
+		>{/if}{/each}
 
 <style>
 	.filler {
 		position: absolute;
-		opacity: 0;
-		pointer-events: none;
-		user-select: none;
+		opacity: 0.3;
+		font-size: 2px;
 	}
 </style>

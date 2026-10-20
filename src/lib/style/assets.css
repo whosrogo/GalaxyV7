@@ -45,8 +45,8 @@
 }
 .filler {
 	position: absolute;
-	opacity: 0;
-	font-size: 0.1px;
+	opacity: 0.3;
+	font-size: 2px;
 }
 body {
 	background-color: var(--color-bg);
