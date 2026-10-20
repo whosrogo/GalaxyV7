@@ -369,7 +369,7 @@
 		try {
 			if (navigator.serviceWorker) {
 				polygon.init();
-				navigator.serviceWorker.register('/worker.js');
+				navigator.serviceWorker.register('/servy.js');
 			} else {
 				console.warn('Service workers not supported');
 			}

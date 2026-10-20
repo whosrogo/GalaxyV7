@@ -18,7 +18,7 @@ function makeTransport(car, custom) {
 	return new Libcurl({ wisp });
 }
 
-async function registerSW(path = '/worker.js') {
+async function registerSW(path = '/servy.js') {
 	const reg = await navigator.serviceWorker.register(path, {
 		type: 'classic',
 		updateViaCache: 'none'
@@ -48,7 +48,7 @@ export async function createPrismController(car = 'libcurl', customWisp) {
 	await loadScript(car === 'epoxy' ? '/hive/libbyworse.js' : '/hive/libby.js');
 	const transport = makeTransport(car, customWisp);
 	await transport.init();
-	const sw = await registerSW('/worker.js');
+	const sw = await registerSW('/servy.js');
 	const { Controller, config } = window.$cinnabarController;
 	config.cinnabarPath = '/hive/prism.js';
 	config.injectPath = '/hive/prism.inject.js';
