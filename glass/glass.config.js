@@ -1,5 +1,5 @@
 self.__se$config = {
-  prefix: "/service/glass/",
+  prefix: "/ball/glass/",
   encodeUrl: Fathom.codec.xor.encode,
   decodeUrl: Fathom.codec.xor.decode,
   handler: "/glass/glass.handler.js",

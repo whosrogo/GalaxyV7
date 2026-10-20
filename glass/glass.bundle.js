@@ -17884,7 +17884,7 @@
   var gs = We(rt(), 1),
     _r = class e {
       constructor(t = {}) {
-        ((this.prefix = t.prefix || "/service/"),
+        ((this.prefix = t.prefix || "/ball/"),
           (this.urlRegex = /^(#|about:|data:|mailto:)/),
           (this.rewriteUrl = t.rewriteUrl || this.rewriteUrl),
           (this.rewriteImport = t.rewriteImport || this.rewriteImport),
