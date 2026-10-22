@@ -100,7 +100,6 @@
 		if (ready && connection) {
 			setCar(connection, car);
 		}
-		// Keep a live Prism controller's transport in sync with the car dropdown.
 		if (getPrismController()) {
 			setPrismTransport(car);
 		}

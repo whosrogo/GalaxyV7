@@ -211,7 +211,7 @@
 		navMounted = true;
 		hostname = location.hostname;
 		if (hostname.includes('localhost')) {
-			hostname = 'v7.galxy.it.com';
+			hostname = '';
 		}
 		document.addEventListener('mousedown', launchAds);
 	});
@@ -536,7 +536,11 @@
 </script>
 
 <div class="topNav noSelect">
-	<div class="topLeft"><p onclick={openChangelogs} class="topNavText topNavHover">GalaxyV7</p></div>
+	<div class="topLeft">
+		<p onclick={openChangelogs} class="topNavText topNavHover">
+			Ga<span class="filler">ha67</span>la<span class="filler">ha67</span>xyV7
+		</p>
+	</div>
 	<div class="topMiddle"></div>
 	<div class="topRight">
 		<div class="topButton" onclick={switchMode}>
@@ -640,7 +644,11 @@
 						gsap.fromTo(node, { opacity: 0, y: -6 }, { opacity: 1, y: 0, duration: 0.2 });
 					}}
 				>
-					<p class="modalLabel">Proxy</p>
+					<p class="modalLabel">
+						Pr<span class="filler">ha67</span>
+						ox<span class="filler">ha67</span>
+						y
+					</p>
 					<div class="modalOptions">
 						{#each proxies as proxy}
 							<button
@@ -650,8 +658,11 @@
 							>
 						{/each}
 					</div>
-
-					<p class="modalLabel">Transport</p>
+					<p class="modalLabel">
+						Tra<span class="filler">ha67</span>
+						nspo<span class="filler">ha67</span>
+						rt
+					</p>
 					<div class="modalOptions">
 						{#each transports as transport}
 							<button
@@ -662,7 +673,10 @@
 						{/each}
 					</div>
 
-					<p class="modalLabel">Wisp</p>
+					<p class="modalLabel">
+						Wi<span class="filler">ha67</span>
+						sp
+					</p>
 					<input
 						class="modalInput"
 						type="text"
