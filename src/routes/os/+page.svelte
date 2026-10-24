@@ -757,7 +757,7 @@
 				onmouseenter={(e) => hoverStart(e, app.id)}
 				onmouseleave={hoverEnd}
 			>
-				<img class="navIcon" src={app.icon} alt={app.name} />
+				<img class="navIcon" src={app.icon} />
 			</button>
 		{/each}
 	</div>
