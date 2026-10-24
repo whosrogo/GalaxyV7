@@ -46,7 +46,7 @@
 	let dragging = $state(false);
 	let windowComps = [];
 	let hostname = $state(null);
-	let proxApi = '%2Fapi%3Furl%3D%7Burl%7D%26type%3Dprism%26transport%3DlibbyRaw%26autoSW%3Dfalse';
+	let proApi = '%2Fapi%3Furl%3D%7Burl%7D%26type%3Dprism%26car%3DlibbyRaw%26autoSW%3Dfalse';
 	function startNavResize(e) {
 		dragging = true;
 		temp = navSizeMulti;
@@ -104,7 +104,7 @@
 		},
 		{
 			id: 3,
-			url: `https://${hostname}/pyrite/?api=https%3A%2F%2F${hostname}${proxApi}`,
+			url: `https://${hostname}/pyrite/?api=https%3A%2F%2F${hostname}${proApi}`,
 			name: 'Pyrite',
 			icon: p,
 			height: '50%',
