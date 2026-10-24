@@ -747,17 +747,9 @@
 		{#each apps as app (app.id)}
 			<button
 				class="navButton"
-				{@attach animateNavButton}
-				class:active={isAppActive(app.id)}
-				class:hasMinimized={hasMinimizedWindow(app.id) || getAppWindows(app.id).length > 0}
-				onclick={() =>
-					openWindow(app.url, app.name, app.height, app.width, app.top, app.left, app.id)}
-				oncontextmenu={(e) =>
-					openMenu(e, 'apps', app.id, app.url, app.name, app.height, app.width, app.top, app.left)}
-				onmouseenter={(e) => hoverStart(e, app.id)}
-				onmouseleave={hoverEnd}
+				style="opacity: 1;"
 			>
-				<img class="navIcon" src={app.icon} alt={app.name} />
+				<img class="navIcon" src={browser} alt="" />
 			</button>
 		{/each}
 	</div>

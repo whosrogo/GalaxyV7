@@ -745,21 +745,21 @@
 	<div class="navResize" onmousedown={startNavResize}></div>
 	<div class="navStuff noSelect" oncontextmenu={(e) => openMenu(e, 'navBar')}>
 		{#each apps as app (app.id)}
-			<button
-				class="navButton"
-				{@attach animateNavButton}
-				class:active={isAppActive(app.id)}
-				class:hasMinimized={hasMinimizedWindow(app.id) || getAppWindows(app.id).length > 0}
-				onclick={() =>
-					openWindow(app.url, app.name, app.height, app.width, app.top, app.left, app.id)}
-				oncontextmenu={(e) =>
-					openMenu(e, 'apps', app.id, app.url, app.name, app.height, app.width, app.top, app.left)}
-				onmouseenter={(e) => hoverStart(e, app.id)}
-				onmouseleave={hoverEnd}
-			>
-				<img class="navIcon" src={app.icon} alt={app.name} />
-			</button>
+			<button class="navButton" style="opacity: 1;"> </button>
 		{/each}
 	</div>
 </div>
 
+{#each $windowList as window, i (window.id)}
+	<Window
+		bind:this={windowComps[i]}
+		url={window.url}
+		name={window.name}
+		height={window.height}
+		width={window.width}
+		top={window.top}
+		left={window.left}
+		id={window.id}
+		sender={window.sender}
+	/>
+{/each}

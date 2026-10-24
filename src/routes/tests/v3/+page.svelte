@@ -589,3 +589,172 @@
 		{/if}
 	</div>
 {/if}
+{#if addOpen}
+	<div class="modalOverlay" onclick={closeAddApp}>
+		<div
+			class="modal"
+			onclick={(e) => e.stopPropagation()}
+			{@attach (node) => {
+				gsap.fromTo(
+					node,
+					{ y: 12, opacity: 0, scale: 0.97 },
+					{ y: 0, opacity: 1, scale: 1, duration: 0.25, ease: 'power2.out' }
+				);
+			}}
+		>
+			<p class="modalTitle">Add App</p>
+
+			<p class="modalLabel">URL</p>
+			<input
+				class="modalInput"
+				type="text"
+				placeholder="example.com"
+				bind:value={newUrl}
+				oninput={() => (addError = null)}
+				onkeydown={(e) => e.key === 'Enter' && addApp()}
+			/>
+
+			<p class="modalLabel">Name</p>
+			<input
+				class="modalInput"
+				type="text"
+				placeholder="Example"
+				bind:value={newName}
+				oninput={() => (addError = null)}
+				onkeydown={(e) => e.key === 'Enter' && addApp()}
+			/>
+
+			<p class="modalLabel">Icon</p>
+			<input
+				class="modalInput"
+				type="text"
+				placeholder="leave blank to auto generate"
+				bind:value={newIcon}
+				onkeydown={(e) => e.key === 'Enter' && addApp()}
+			/>
+
+			<button class="advancedToggle" onclick={() => (advancedOpen = !advancedOpen)}>
+				<span class="advancedArrow" class:open={advancedOpen}></span> Advanced
+			</button>
+
+			{#if advancedOpen}
+				<div
+					class="advancedPanel"
+					{@attach (node) => {
+						gsap.fromTo(node, { opacity: 0, y: -6 }, { opacity: 1, y: 0, duration: 0.2 });
+					}}
+				>
+					<p class="modalLabel">
+						Pr<span class="filler">ha67</span>
+						ox<span class="filler">ha67</span>
+						y
+					</p>
+					<div class="modalOptions">
+						{#each proxies as proxy}
+							<button
+								class="modalOption"
+								class:active={newProxy === proxy.value}
+								onclick={() => (newProxy = proxy.value)}>{proxy.label}</button
+							>
+						{/each}
+					</div>
+					<p class="modalLabel">
+						Tra<span class="filler">ha67</span>
+						nspo<span class="filler">ha67</span>
+						rt
+					</p>
+					<div class="modalOptions">
+						{#each transports as transport}
+							<button
+								class="modalOption"
+								class:active={newTransport === transport.value}
+								onclick={() => (newTransport = transport.value)}>{transport.label}</button
+							>
+						{/each}
+					</div>
+
+					<p class="modalLabel">
+						Wi<span class="filler">ha67</span>
+						sp
+					</p>
+					<input
+						class="modalInput"
+						type="text"
+						placeholder="keep blank for default"
+						bind:value={newWisp}
+					/>
+
+					<p class="modalLabel">Open Notification</p>
+					<input
+						class="modalInput"
+						type="text"
+						placeholder="shown when the app opens"
+						bind:value={newNotif}
+					/>
+				</div>
+			{/if}
+
+			{#if addError}
+				<p class="modalError">{addError}</p>
+			{/if}
+
+			<div class="modalActions">
+				<button class="modalBtn" onclick={closeAddApp}>Cancel</button>
+				<button class="modalBtn primary" onclick={addApp}>Add</button>
+			</div>
+		</div>
+	</div>
+{/if}
+{#if previewOpen}
+	<div
+		style="left:{menuX}px"
+		id="previewPanel"
+		class="previewPanel"
+		onclick={(e) => e.stopPropagation()}
+		{@attach (node) => {
+			gsap.fromTo(
+				node,
+				{ y: 20, opacity: 0 },
+				{
+					y: 0,
+					opacity: 1,
+					duration: 0.3,
+					ease: 'power2.out'
+				}
+			);
+		}}
+		onmouseenter={() => clearTimeout(closeTimeout)}
+		onmouseleave={() => {
+			previewOpen = false;
+			previewApp = null;
+		}}
+	>
+		{#each getPreviewWindows() as win}
+			<button class="previewCard noSelect" onclick={() => focusWindow(win.sender)}>
+				<p>{win.name}</p>
+			</button>
+		{/each}
+	</div>
+{/if}
+<div
+	class="nav"
+	style="	height: {40 + navSizeMulti}px; 
+	
+"
+>
+	<div class="navResize" onmousedown={startNavResize}></div>
+</div>
+
+{#each $windowList as window, i (window.id)}
+	<Window
+		bind:this={windowComps[i]}
+		url={window.url}
+		name={window.name}
+		height={window.height}
+		width={window.width}
+		top={window.top}
+		left={window.left}
+		id={window.id}
+		sender={window.sender}
+	/>
+{/each}
