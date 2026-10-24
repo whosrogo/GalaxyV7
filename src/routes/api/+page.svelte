@@ -3,7 +3,7 @@
 
 url:       required, https:// is added when missing, must contain a dot
 type:      prism (SJv2, default), polygon (SJ), glass (UV)
-transport: libcurlRaw (default), libcurl, epoxy
+transport: libbyRaw (default), libcurl, epoxy
 wisp:      wss://..., defaults to the server's own wisp
 notif:     read by /os when it opens this page in a window, not by /api itself
 autoSW:    true loads on its own, false waits for a click first
@@ -35,7 +35,7 @@ autoSW:    true loads on its own, false waits for a click first
 	const params = [
 		['url', 'required', 'https:// added when missing'],
 		['type', 'prism', 'prism (sjv2), polygon (sj), glass (uv)'],
-		['transport', 'libcurlRaw', 'libcurlRaw, libcurl(dont use), epoxy'],
+		['transport', 'libbyRaw', 'libbyRaw, libcurl(dont use), epoxy'],
 		['wisp', 'this server', 'wss://... to use another wisp'],
 		['notif', 'none', 'toast text, shown by /os when it opens the window'],
 		['autoSW', 'true', 'false shows a button and loads on click instead']
@@ -87,7 +87,8 @@ autoSW:    true loads on its own, false waits for a click first
 			console.error('Failed to initialize SJ:', e);
 		}
 		connection = createConnection();
-		if (['libcurl', 'libcurlRaw', 'epoxy'].includes(apiTransport)) car = apiTransport;
+		const requestedCar = apiTransport === 'libbyRaw' ? 'libcurlRaw' : apiTransport;
+		if (['libcurl', 'libcurlRaw', 'epoxy'].includes(requestedCar)) car = requestedCar;
 		await setCar(connection, car, apiWisp);
 
 		ready = true;
@@ -137,7 +138,7 @@ autoSW:    true loads on its own, false waits for a click first
 			<dd><span class="fallback">{fallback}</span> — {notes}</dd>
 		{/each}
 	</dl>
-	<p class="example">/api?url=example.com&amp;type=prism&amp;transport=libcurlRaw</p>
+	<p class="example">/api?url=example.com&amp;type=prism&amp;transport=libbyRaw</p>
 </div>
 
 <style>
