@@ -426,7 +426,7 @@
 			return;
 		}
 
-		const params = new URLSearchParams({ url, type: newProxy, transport: newTransport });
+		const params = new URLSearchParams({ url, type: newProxy, car: newTransport });
 		if (newNotif.trim()) params.set('notif', newNotif.trim());
 		if (newWisp.trim()) params.set('wisp', newWisp.trim());
 

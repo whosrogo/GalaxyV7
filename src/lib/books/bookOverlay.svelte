@@ -10,7 +10,7 @@
 		if (!game) return '';
 		if (!proxied) return game.url;
 		const url = encodeURIComponent(new URL(game.url, 'https://gtest.5.188.124.68.nip.io/').href);
-		return `/api?url=${url}&type=glass&transport=libcurlRaw&autoSW=true`;
+		return `/api?url=${url}&type=glass&car=libbyRaw&autoSW=true`;
 	});
 
 	$effect(() => {

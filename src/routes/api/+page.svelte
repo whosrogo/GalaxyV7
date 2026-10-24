@@ -1,9 +1,9 @@
 <!--
-/api?url={}&type={}&transport={}&wisp={}&notif={}&autoSW={}
+/api?url={}&type={}&car={}&wisp={}&notif={}&autoSW={}
 
 url:       required, https:// is added when missing, must contain a dot
 type:      prism (SJv2, default), polygon (SJ), glass (UV)
-transport: libbyRaw (default), libcurl, epoxy
+car:       libbyRaw (default), libcurl, epoxy
 wisp:      wss://..., defaults to the server's own wisp
 notif:     read by /os when it opens this page in a window, not by /api itself
 autoSW:    true loads on its own, false waits for a click first
@@ -31,11 +31,11 @@ autoSW:    true loads on its own, false waits for a click first
 		}
 	}
 
-	const api = '/api?url={}&type={}&transport={}&wisp={}&notif={}&autoSW={}';
+	const api = '/api?url={}&type={}&car={}&wisp={}&notif={}&autoSW={}';
 	const params = [
 		['url', 'required', 'https:// added when missing'],
 		['type', 'prism', 'prism (sjv2), polygon (sj), glass (uv)'],
-		['transport', 'libbyRaw', 'libbyRaw, libcurl(dont use), epoxy'],
+		['car', 'libbyRaw', 'libbyRaw, libcurl(dont use), epoxy'],
 		['wisp', 'this server', 'wss://... to use another wisp'],
 		['notif', 'none', 'toast text, shown by /os when it opens the window'],
 		['autoSW', 'true', 'false shows a button and loads on click instead']
@@ -51,7 +51,9 @@ autoSW:    true loads on its own, false waits for a click first
 
 	const apiUrl = $derived(normalizeUrl($page.url.searchParams.get('url')));
 	const apiType = $derived($page.url.searchParams.get('type'));
-	const apiTransport = $derived($page.url.searchParams.get('transport'));
+	const apiCar = $derived(
+		$page.url.searchParams.get('car') ?? $page.url.searchParams.get('transport')
+	);
 	const apiWisp = $derived($page.url.searchParams.get('wisp') || undefined);
 	const apiAutoSW = $derived($page.url.searchParams.get('autoSW') || 'true');
 	const apiHost = $derived(apiUrl ? new URL(apiUrl).hostname : '');
@@ -87,7 +89,7 @@ autoSW:    true loads on its own, false waits for a click first
 			console.error('Failed to initialize SJ:', e);
 		}
 		connection = createConnection();
-		const requestedCar = apiTransport === 'libbyRaw' ? 'libcurlRaw' : apiTransport;
+		const requestedCar = apiCar === 'libbyRaw' ? 'libcurlRaw' : apiCar;
 		if (['libcurl', 'libcurlRaw', 'epoxy'].includes(requestedCar)) car = requestedCar;
 		await setCar(connection, car, apiWisp);
 
@@ -138,7 +140,7 @@ autoSW:    true loads on its own, false waits for a click first
 			<dd><span class="fallback">{fallback}</span> — {notes}</dd>
 		{/each}
 	</dl>
-	<p class="example">/api?url=example.com&amp;type=prism&amp;transport=libbyRaw</p>
+	<p class="example">/api?url=example.com&amp;type=prism&amp;car=libbyRaw</p>
 </div>
 
 <style>
