@@ -85,7 +85,7 @@
 	<div class="hero">
 		<p class="greeting" style="color:{fg}">{greeting} &middot; {clock}</p>
 		<form class="home-search" onsubmit={submitSearch}>
-			<img src={searchIcon} class="home-search-icon" alt="" />
+			<img src={searchIcon} class="home-search-icon" />
 			<input
 				class="noSelect"
 				type="text"
@@ -102,7 +102,7 @@
 					onsearch(url);
 				}}
 			>
-				<img class="noSelect" src={icon} alt="" />
+				<img class="noSelect" src={icon} />
 				<!-- <p>{label}</p> -->
 			</button>
 		{/snippet}

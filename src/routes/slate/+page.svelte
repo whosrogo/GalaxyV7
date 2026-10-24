@@ -389,13 +389,13 @@
 <div class="nav-bar noSelect">
 	<div class="nav-left">
 		<div class="button" onclick={goBack}>
-			<img src={back} alt="back" class="nav-icon noSelect" />
+			<img src={back} class="nav-icon noSelect" />
 		</div>
 		<div class="button" onclick={goForward}>
-			<img src={forward} alt="forward" class="nav-icon noSelect" />
+			<img src={forward} class="nav-icon noSelect" />
 		</div>
 		<div class="button" onclick={reloadTab}>
-			<img src={reload} alt="reload" class="nav-icon noSelect" />
+			<img src={reload} class="nav-icon noSelect" />
 		</div>
 	</div>
 	<div class="nav-middle">
@@ -415,7 +415,7 @@
 				disabled={!ready}
 			/>
 			<div class="star" onclick={startBookmark}>
-				<img class="starIcon noSelect" src={star} alt="" />
+				<img class="starIcon noSelect" src={star} />
 			</div>
 		</form>
 		{#if bookmarkMenu}
@@ -437,7 +437,7 @@
 
 	<div class="nav-right">
 		<div class="button" onclick={toggleExtensions}>
-			<img src={extensions} alt="extensions" class="nav-icon noSelect puzzle" />
+			<img src={extensions} class="nav-icon noSelect puzzle" />
 		</div>
 		{#if extensionsOpen}
 			<div class="settings-overlay" onclick={toggleExtensions}></div>
@@ -464,7 +464,7 @@
 			</div>
 		{/if}
 		<div class="button" onclick={toggleSettings}>
-			<img src={setting} alt="settings" class="nav-icon noSelect" />
+			<img src={setting} class="nav-icon noSelect" />
 		</div>
 		{#if settingsOpen}
 			<div class="settings-overlay" onclick={toggleSettings}></div>

@@ -115,7 +115,7 @@
 	<div class="pill noSelect" style="background-color: {pillColor};">
 		<div class="stuff noSelect">
 			<div class="icon noSelect">
-				<img src={faviconUrl} class="tab-icon noSelect" alt="" style="opacity:{opacity}" />
+				<img src={faviconUrl} class="tab-icon noSelect" style="opacity:{opacity}" />
 			</div>
 			<p class="title">{compiledTitle[0]}<span class="filler">haha6767</span>{compiledTitle[1]}</p>
 			<div class="close" onclick={closeTab}><p class="closeText">&times;</p></div>

@@ -57,7 +57,6 @@
 	{:else}
 		<img
 			src={game.thumb}
-			alt=""
 			class="bookImg"
 			loading="lazy"
 			decoding="async"

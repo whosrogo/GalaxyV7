@@ -97,7 +97,7 @@
 		</p>
 		<div class="content">
 			<label class="actionBtn">
-				<img class="icons" src={uploadImg} alt="" />
+				<img class="icons" src={uploadImg} />
 				Choose File
 				<input type="file" accept=".galaxy,application/octet-stream" hidden onchange={pickImport} />
 			</label>

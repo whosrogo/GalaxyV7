@@ -544,7 +544,7 @@
 	<div class="topMiddle"></div>
 	<div class="topRight">
 		<div class="topButton" onclick={switchMode}>
-			<img src={y} alt="" />
+			<img src={y} />
 		</div>
 		<p>{timeString}</p>
 	</div>
@@ -757,7 +757,7 @@
 				onmouseenter={(e) => hoverStart(e, app.id)}
 				onmouseleave={hoverEnd}
 			>
-				<img class="navIcon" src={app.icon} alt={app.name} />
+				<img class="navIcon" src={app.icon} />
 			</button>
 		{/each}
 	</div>

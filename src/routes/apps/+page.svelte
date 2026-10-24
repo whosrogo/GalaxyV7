@@ -199,11 +199,10 @@
 				togglePin(app.name);
 			}}
 		>
-			<img src={pin} alt="" class="pinIcon" />
+			<img src={pin} class="pinIcon" />
 		</button>
 		<img
 			src={location + app.image}
-			alt={app.name}
 			class="appImg"
 			loading="lazy"
 			onclick={() => handleSubmit(app.url, app.type)}
@@ -217,7 +216,7 @@
 {/snippet}
 
 <div class="search">
-	<img src={search} alt="" class="searchIcon" />
+	<img src={search} class="searchIcon" />
 	<input type="text" placeholder="Search Apps or Tags" bind:value={query} autocomplete="off" />
 </div>
 

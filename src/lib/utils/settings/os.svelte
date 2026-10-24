@@ -98,7 +98,7 @@
 		<p class="desc">Use gifs for live backgrounds</p>
 		<div class="content">
 			<label class="actionBtn">
-				<img class="icons" src={uploadImg} alt="" />
+				<img class="icons" src={uploadImg} />
 				Upload Image
 				<input type="file" accept="image/*" hidden onchange={handleUpload} />
 			</label>

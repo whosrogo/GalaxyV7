@@ -135,7 +135,7 @@
 	<div class="content">
 		{#each tabPresets as preset}
 			<button class="actionBtn" onclick={() => saveTabPreset(preset.name, preset.icon)}>
-				<img class="icons" src={preset.icon} alt="" />
+				<img class="icons" src={preset.icon} />
 				{preset.label}
 			</button>
 		{/each}

@@ -497,13 +497,13 @@
 		<div class="bar-middle" onmousedown={dragStart} ondblclick={maximizeWindow}></div>
 		<div class="bar-right">
 			<button class="navControl" onclick={minimizeWindow} type="button">
-				<img class="minimize noSelect" src={minimize} alt="Minimize" />
+				<img class="minimize noSelect" src={minimize} />
 			</button>
 			<button class="navControl" onclick={maximizeWindow} type="button">
-				<img class="maximize noSelect" src={maximizedStat ? layers : maximize} alt="Maximize" />
+				<img class="maximize noSelect" src={maximizedStat ? layers : maximize} />
 			</button>
 			<button class="navControl closeDiv" onclick={closeWindow} type="button">
-				<img class="close noSelect" src={close} alt="Close" />
+				<img class="close noSelect" src={close} />
 				<!--I'll just live with this ig-->
 			</button>
 		</div>

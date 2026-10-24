@@ -46,7 +46,7 @@
 </script>
 
 <div class="search">
-	<img src={searchIcon} alt="" class="searchIcon" />
+	<img src={searchIcon} class="searchIcon" />
 	<input type="text" placeholder="Search Books or Tags" bind:value={search} autocomplete="off" />
 </div>
 
@@ -77,12 +77,12 @@
 
 	<div class="actions">
 		<button class="pill" onclick={onrandom} title="Open a random book">
-			<img src={shuffle} alt="" class="pillIcon" />
+			<img src={shuffle} class="pillIcon" />
 			Random
 		</button>
 		<button class="pill" onclick={switchMode}>
 			Switch Mode
-			<img src={y} alt="" class="pillIcon" />
+			<img src={y} class="pillIcon" />
 		</button>
 	</div>
 </div>
