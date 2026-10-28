@@ -30,6 +30,7 @@
 	import { createPrismController, setPrismTransport, getPrismController } from '$lib/lethe/prism';
 	import { enablePopupInterceptor } from '$lib/lethe/reflux';
 	import { subscribeSettings } from '$lib/utils/settingsSync.js';
+	import { setToken } from '$lib/utils/brave.js';
 	let tabs = $state([]);
 	let frames = $state([]);
 	let query = $state('');
@@ -122,8 +123,6 @@
 		popupInterceptor = LastPopupIntState; //intercept
 		hydrated = true;
 
-		// Rendered inside the settings theme preview: show the chrome, skip the proxy stack
-		// so opening /settings doesn't load the transports or open a wisp connection.
 		if (new URLSearchParams(location.search).has('preview')) {
 			ready = true;
 			return;
@@ -140,6 +139,10 @@
 		await setCar(connection, car, customWisp);
 		await enablePopupInterceptor();
 		ready = true;
+
+		if (localStorage.getItem('search.brave.com@app.blindtoken.tokens') == null) {
+			setToken();
+		}
 	});
 
 	onMount(() =>
