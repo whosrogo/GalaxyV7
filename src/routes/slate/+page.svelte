@@ -30,7 +30,6 @@
 	import { createPrismController, setPrismTransport, getPrismController } from '$lib/lethe/prism';
 	import { enablePopupInterceptor } from '$lib/lethe/reflux';
 	import { subscribeSettings } from '$lib/utils/settingsSync.js';
-	import { setToken } from '$lib/utils/brave.js';
 	let tabs = $state([]);
 	let frames = $state([]);
 	let query = $state('');
@@ -44,7 +43,7 @@
 	let prismController;
 	let sjFrame;
 	let customWisp = $state('');
-	let searchEngine = $state('ecosia');
+	let searchEngine = $state('ddg');
 	let car = $state('libcurl');
 	let bookmarks = $state([]);
 	let connection;
@@ -108,7 +107,7 @@
 				loadSetting('lethe', 'sj2'),
 				loadSetting('car', 'libcurl'),
 				loadSetting('customWisp', ''),
-				loadSetting('searchEngine', 'ecosia'),
+				loadSetting('searchEngine', 'ddg'),
 				loadSetting('bookmarks', [], JSON.parse),
 				loadSetting('popupInterceptor', true, (raw) => raw === 'true'),
 				loadSetting('LastPopupIntState', true)
@@ -139,10 +138,6 @@
 		await setCar(connection, car, customWisp);
 		await enablePopupInterceptor();
 		ready = true;
-
-		if (localStorage.getItem('search.brave.com@app.blindtoken.tokens') == null) {
-			setToken();
-		}
 	});
 
 	onMount(() =>
