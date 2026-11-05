@@ -58,7 +58,7 @@ export async function saveTheme(slug) {
 }
 
 export async function loadTheme() {
-	return await loadSetting('theme', '');
+	return await loadSetting('theme', 'default');
 }
 
 export function initTheme() {
