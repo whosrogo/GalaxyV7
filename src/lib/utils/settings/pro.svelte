@@ -5,14 +5,14 @@
 	import { onMount } from 'svelte';
 
 	let lethe = $state('sj2');
-	let searchEngine = $state('google');
+	let searchEngine = $state('startpage');
 	let car = $state('libcurl');
 	let customWisp = $state('');
 
 	onMount(async () => {
 		const [savedLethe, savedSearch, savedCar, savedWisp] = await Promise.all([
 			loadSetting('lethe', 'sj2'),
-			loadSetting('searchEngine', 'google'),
+			loadSetting('searchEngine', 'startpage'),
 			loadSetting('car', 'libcurl'),
 			loadSetting('customWisp', '')
 		]);
@@ -48,7 +48,11 @@
 		{ value: 'google', label: 'Google' },
 		{ value: 'ddg', label: 'DuckDuckGo' },
 		{ value: 'ecosia', label: 'Ecosia' },
-		{ value: 'brave', label: 'Brave' }
+		{ value: 'brave', label: 'Brave' },
+		{ value: 'yahoo', label: 'Yahoo' },
+		{ value: 'yep', label: 'Yep' },
+		{ value: 'startpage', label: 'Startpage' },
+		{ value: 'bing', label: 'Bing' }
 	];
 	const transports = [
 		{ value: 'libcurl', label: 'Lib', labeltwo: 'curl' },

@@ -8,8 +8,16 @@ export function search(input, template) {
 		searchEngine = 'https://google.com/search?q=%s';
 	} else if (template == 'brave') {
 		searchEngine = 'https://search.brave.com/search?q=%s';
+	} else if (template == 'yahoo') {
+		searchEngine = 'https://search.yahoo.com/search?p=%s';
+	} else if (template == 'yep') {
+		searchEngine = 'https://yep.com/?q=%s';
+	} else if (template == 'startpage') {
+		searchEngine = 'https://www.startpage.com/sp/search?query=%s';
+	} else if (template == 'bing') {
+		searchEngine = 'https://www.bing.com/search?q=%s';
 	} else {
-		searchEngine = 'https://www.duckduckgo.com/search?q=%s';
+		searchEngine = 'https://www.startpage.com/sp/search?query=%s';
 	}
 	try {
 		return new URL(input).toString();
