@@ -1,5 +1,5 @@
 // ADSTERRA
-let sites = [	
+let sites = [
 	'https://araplhn.org/4/b23e3965e3f92f6f60319e1ae94de789', //runaround.org, Filehosts
 	'https://araplhn.org/4/37f918c6b471c12bfb6ce52d26763e01', //ncs.rich, Torrents
 	'https://araplhn.org/4/710cc2945d20faa4361bf4e152ce88a5', //ncs.fyi, URLShortener
@@ -13,7 +13,7 @@ let sites = [
 	'https://budgetezy.org/4/6020dd11f219f3460e56b19d3d8cbfd2', //elor.site, Sport Streaming
 	'https://directyp.org/4/6ead45174ffa772cf9c8ccd90721ad19', //isokrat.info, Movies
 	'https://asiafilm.org/4/36f77b48f0bb7067c5e26817d846f6ea', //Smartlink_17
-	'https://asiafilm.org/4/a4efa29c4f6554a1805aa4e06ef7f352' //melitha
+	'https://www.profitableratecpmnetwork.com/rpgnbe9w4?key=6881696359ce8cfaeb78dcf6520baac5' //melitha
 ];
 export function launchAds() {
 	if (location.hostname.includes('localhost')) {
