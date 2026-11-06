@@ -43,7 +43,7 @@
 	let prismController;
 	let sjFrame;
 	let customWisp = $state('');
-	let searchEngine = $state('startpage');
+	let searchEngine = $state('default');
 	let car = $state('libcurl');
 	let bookmarks = $state([]);
 	let connection;
@@ -107,7 +107,7 @@
 				loadSetting('lethe', 'sj2'),
 				loadSetting('car', 'libcurl'),
 				loadSetting('customWisp', ''),
-				loadSetting('searchEngine', 'startpage'),
+				loadSetting('searchEngine', 'default'),
 				loadSetting('bookmarks', [], JSON.parse),
 				loadSetting('popupInterceptor', true, (raw) => raw === 'true'),
 				loadSetting('LastPopupIntState', true)
@@ -485,6 +485,7 @@
 				<input bind:value={customWisp} placeholder="keep blank for default" type="text" />
 				<p>Sea<span class="filler">ha67</span>rch Engine</p>
 				<select bind:value={searchEngine}>
+					<option value="default">Default</option>
 					<option value="ddg">DuckDuckGo</option>
 					<option value="brave">Brave</option>
 					<option value="ecosia">Ecosia</option>

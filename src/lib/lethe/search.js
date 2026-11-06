@@ -1,6 +1,8 @@
 export function search(input, template) {
 	let searchEngine;
-	if (template == 'ecosia') {
+	if (template == 'default') {
+		searchEngine = 'https://www.duckduckgo.com/search?q=%s';
+	} else if (template == 'ecosia') {
 		searchEngine = 'https://www.ecosia.org/search?q=%s';
 	} else if (template == 'ddg') {
 		searchEngine = 'https://www.duckduckgo.com/search?q=%s';
@@ -17,7 +19,7 @@ export function search(input, template) {
 	} else if (template == 'bing') {
 		searchEngine = 'https://www.bing.com/search?q=%s';
 	} else {
-		searchEngine = 'https://www.startpage.com/sp/search?query=%s';
+		searchEngine = 'https://google.com/search?q=%s';
 	}
 	try {
 		return new URL(input).toString();
