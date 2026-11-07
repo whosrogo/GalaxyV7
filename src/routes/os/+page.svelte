@@ -27,7 +27,7 @@
 	import { loadSetting, saveSetting, onSettingChange } from '$lib/utils/localspace.js';
 	import faviconFetch from 'favicon-fetch';
 	import { launchAds } from '$lib/utils/ads';
-
+	let expireNote = $state(false);
 	let activeButton = $state(null);
 	let menuOpen = $state(false);
 	let openMenuX = $state(0);
@@ -214,6 +214,7 @@
 			hostname = '';
 		}
 		document.addEventListener('mousedown', launchAds);
+		expireNote = true;
 	});
 
 	function getAppWindows(appId) {
@@ -589,6 +590,7 @@
 		{/if}
 	</div>
 {/if}
+
 {#if addOpen}
 	<div class="modalOverlay" onclick={closeAddApp}>
 		<div
@@ -776,3 +778,35 @@
 		sender={window.sender}
 	/>
 {/each}
+{#if expireNote}
+	<div class=" expireNote">
+		<p class="expireText">
+			This link will no longer receive updates. You may continue using it, or switch to a newer one.
+		</p>
+		<div class="expireBtns">
+			<button class="expireBtn modalBtn" onclick={() => (expireNote = false)}>Dismiss</button>
+			<button class="expireBtn modalBtn" onclick={() => window.location.replace('/links')}>
+				Get Li<span class="filler">67</span>nks</button
+			>
+		</div>
+	</div>
+{/if}
+
+<style>
+	.expireNote {
+		z-index: 9999;
+		display: flex !important;
+		flex-direction: column;
+		width: 100vw !important;
+		height: auto !important;
+		background-color: var(--color-bg) !important;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	.expireBtns {
+		display: flex;
+		flex-direction: row;
+		gap: 10px;
+	}
+</style>

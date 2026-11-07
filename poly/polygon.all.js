@@ -4530,7 +4530,7 @@ ${l}`;
                                 <ul>
                                     <li><b>Clearing site cache by going to: </b>chrome://settings/content/all?searchSubpage=<a id="hostname"></a></li>
                                     <li>Use a different link</li>
-                                    <li>If it's still broken, please make a bug report or join the dc server at http://tinyurl.com/galaxyiscool</li>
+                                    <li>If it's still broken, please make a bug report or join the dc server at https://tinyurl.com/galaxyiscool</li>
                                 </ul>
                             </div>
                         </div>
