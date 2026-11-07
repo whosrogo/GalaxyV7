@@ -3,6 +3,10 @@
 
 	type Destination = { title: string; url: string };
 	type Category = { name: string; links: (string | Destination)[] };
+	const discordLink: Destination = {
+		title: 'Join Discord server',
+		url: 'https://tinyurl.com/galaxyiscool'
+	};
 	// Edit this list to add, remove, or reorder destinations.
 	const linkCategories: Category[] = [
 		{
@@ -68,13 +72,14 @@
 		},
 		{
 			name: 'Other',
-			links: [{ title: 'Join Discord server', url: 'https://tinyurl.com/galaxyiscool' }]
+			links: [discordLink]
 		}
 	];
 	const categories = linkCategories.map((category) => ({
 		...category,
-		links: category.links.map((link) =>
-			typeof link === 'string' ? { title: new URL(link).hostname, url: link } : link
+		links: category.links.map(
+			(link): Destination =>
+				typeof link === 'string' ? { title: new URL(link).hostname, url: link } : link
 		)
 	}));
 	let query = $state('');
@@ -160,7 +165,13 @@
 {/snippet}
 
 <main>
-	<h1>Links</h1>
+	<div class="page-header">
+		<h1>Links</h1>
+		<button type="button" class="actionBtn" onclick={() => launchModal(discordLink)}>
+			<span class="destination">{@render fillerText(discordLink.title)}</span>
+			<span class="external-icon" aria-hidden="true">↗</span>
+		</button>
+	</div>
 	<input
 		class="search"
 		id="search"
@@ -244,6 +255,16 @@
 		margin: 0 0 12px;
 		font-family: var(--font-family-heading);
 		font-size: 2rem;
+	}
+	.page-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 16px;
+		flex-wrap: wrap;
+	}
+	.page-header h1 {
+		margin: 0;
 	}
 	.desc {
 		margin: 0;
@@ -359,6 +380,17 @@
 	.actionBtn.active {
 		background: var(--color-pin);
 		color: var(--color-text-dark);
+	}
+	.page-header .actionBtn {
+		border: 1px solid var(--color-border-strong);
+		background: var(--overlay-hover-strong);
+		color: var(--color-text);
+	}
+	.page-header .actionBtn:hover {
+		border-color: var(--color-text-muted);
+	}
+	.page-header .actionBtn:active {
+		background: var(--overlay-active);
 	}
 	.destination {
 		min-width: 0;
