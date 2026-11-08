@@ -90,7 +90,7 @@
 			<input
 				class="noSelect"
 				type="text"
-				placeholder="Search or enter address"
+				placeholder="Search"
 				bind:value={homeQuery}
 				bind:this={inputEl}
 				disabled={!ready}

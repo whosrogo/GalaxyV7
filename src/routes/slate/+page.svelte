@@ -403,7 +403,7 @@
 			<input
 				type="text"
 				class="search-input search"
-				placeholder="Search or enter address"
+				placeholder="Search"
 				bind:value={query}
 				bind:this={inputEl}
 				onfocus={registerSW}
