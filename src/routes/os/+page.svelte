@@ -1,5 +1,6 @@
 <script>
 	// @ts-nocheck
+	import Filler from '$lib/utils/filler.svelte';
 	import Window from '$lib/utils/window/window.svelte';
 	import Notifications from '$lib/utils/notifications.svelte';
 	import {
@@ -538,7 +539,7 @@
 <div class="topNav noSelect">
 	<div class="topLeft">
 		<p onclick={openChangelogs} class="topNavText topNavHover">
-			Ga<span class="filler">ha67</span>la<span class="filler">ha67</span>xyV7
+			Ga<Filler />la<Filler />xyV7
 		</p>
 	</div>
 	<div class="topMiddle"></div>
@@ -645,8 +646,8 @@
 					}}
 				>
 					<p class="modalLabel">
-						Pr<span class="filler">ha67</span>
-						ox<span class="filler">ha67</span>
+						Pr<Filler />
+						ox<Filler />
 						y
 					</p>
 					<div class="modalOptions">
@@ -659,8 +660,8 @@
 						{/each}
 					</div>
 					<p class="modalLabel">
-						Tra<span class="filler">ha67</span>
-						nspo<span class="filler">ha67</span>
+						Tra<Filler />
+						nspo<Filler />
 						rt
 					</p>
 					<div class="modalOptions">
@@ -674,7 +675,7 @@
 					</div>
 
 					<p class="modalLabel">
-						Wi<span class="filler">ha67</span>
+						Wi<Filler />
 						sp
 					</p>
 					<input

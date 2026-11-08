@@ -1,4 +1,5 @@
 <script>
+	import Filler from '$lib/utils/filler.svelte';
 	import '$lib/style/settings.css';
 	import Pref from '$lib/utils/settings/pref.svelte';
 	import Themes from '$lib/utils/settings/themes.svelte';
@@ -21,7 +22,7 @@
 		class="navBtn"
 		onclick={() => {
 			document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-		}}><p>{name}<span class="filler">ha67</span>{part}</p></button
+		}}><p>{name}<Filler />{part}</p></button
 	>
 {/snippet}
 <div class="nav noSelect">
@@ -31,7 +32,7 @@
 </div>
 <div class="block" id="pref"><Pref /></div>
 <div class="block" id="pro">
-	<h1>Pro<span class="filler">ha67</span>xy</h1>
+	<h1>Pro<Filler />xy</h1>
 	<Pro />
 </div>
 <div class="block" id="themes">

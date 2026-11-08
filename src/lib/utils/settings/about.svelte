@@ -1,4 +1,5 @@
 <script>
+	import Filler from '$lib/utils/filler.svelte';
 	import '$lib/style/settings.css';
 
 	const version = 'v7.0';
@@ -97,7 +98,7 @@
 		<div class="content">
 			{#each credits as item}
 				<button class="actionBtn" onclick={() => launchModal(item)}
-					><span>{item.label}<span class="filler">ha67</span>{item.labeltwo}</span></button
+					><span>{item.label}<Filler />{item.labeltwo}</span></button
 				>
 			{/each}
 		</div>
@@ -108,7 +109,7 @@
 		<div class="content">
 			<div class="infoRows">
 				<div class="infoRow">
-					<span class="infoKey">Dis<span class="filler">ha67</span>cord User</span>
+					<span class="infoKey">Dis<Filler />cord User</span>
 					<span class="infoVal">rogo7070</span>
 				</div>
 				<div class="infoRow">

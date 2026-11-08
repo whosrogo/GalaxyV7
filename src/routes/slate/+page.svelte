@@ -1,4 +1,5 @@
 <script>
+	import Filler from '$lib/utils/filler.svelte';
 	import '$lib/style/browser.css';
 	import back from '$lib/img/icons/left-arrow.png';
 	import reload from '$lib/img/icons/reload.png';
@@ -470,20 +471,20 @@
 				<button class="menuBtn" onclick={addTab}>New Tab</button>
 				<button class="menuBtn" onclick={startBookmark}>Bookmark Site</button>
 				<div class="break"></div>
-				<p>Pr<span class="filler">ha67</span>oxy</p>
+				<p>Pr<Filler />oxy</p>
 				<select bind:value={letheEngine} disabled={!ready}>
 					<option value="sj2">SJ2</option>
 					<option value="sj">SJ</option>
 					<option value="uv">UV</option>
 				</select>
-				<p>Tran<span class="filler">ha67</span>sport</p>
+				<p>Tran<Filler />sport</p>
 				<select bind:value={car} disabled={!ready}>
 					<option value="libcurl">Lib</option>
 					<option value="epoxy">Epox</option>
 				</select>
-				<p>Wi<span class="filler">ha67</span>sp</p>
+				<p>Wi<Filler />sp</p>
 				<input bind:value={customWisp} placeholder="keep blank for default" type="text" />
-				<p>Sea<span class="filler">ha67</span>rch Engine</p>
+				<p>Sea<Filler />rch Engine</p>
 				<select bind:value={searchEngine}>
 					<option value="default">Default</option>
 					<option value="ddg">DuckDuckGo</option>

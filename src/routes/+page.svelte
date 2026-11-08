@@ -1,4 +1,5 @@
 <script>
+	import Filler from '$lib/utils/filler.svelte';
 	import '$lib/style/main.css';
 	import { browser } from '$app/environment';
 	import gsap from 'gsap';
@@ -99,7 +100,7 @@
 	<div class="hero">
 		<div class="loader">
 			<div class="info">
-				<p class="loading heroDiv">Load<span class="filler">f12fsl</span>ing</p>
+				<p class="loading heroDiv">Load<Filler text="ha67" />ing</p>
 				<p class="percentage heroDiv">{percentage}%</p>
 			</div>
 			<div class="loadBg heroDiv">
@@ -110,8 +111,9 @@
 {:else if mode == null}
 	<div class="container">
 		<h1 class="stagger question">
-			Ho<span class="filler">f12fsl</span>w wo<span class="filler">f12fsl</span>uld you like
-			to use Gala<span class="filler">f12fsl</span>xy?
+			Ho<Filler text="ha67" />w wo<Filler text="ha67" />uld you like to use Gala<Filler
+				text="ha67"
+			/>xy?
 		</h1>
 
 		<div class="options">
@@ -131,7 +133,7 @@
 				style="opacity:0;"
 			>
 				<h2>
-					Ga<span class="filler">f12fsl</span>me<span class="filler">f12fsl</span>s Only
+					Ga<Filler text="ha67" />me<Filler text="ha67" />s Only
 				</h2>
 			</button>
 		</div>
@@ -139,7 +141,7 @@
 		{#if selected}
 			<button class="continue stagger" onclick={() => next()}
 				><p>
-					Con<span class="filler">f12fsl</span>tinue
+					Con<Filler text="ha67" />tinue
 				</p></button
 			>
 		{/if}

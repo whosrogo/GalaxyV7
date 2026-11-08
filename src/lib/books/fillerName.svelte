@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Filler from '$lib/utils/filler.svelte';
 	let { text }: { text: string } = $props();
 
 	type Segment = { chunk: string; filler: string | null };
@@ -16,14 +17,4 @@
 	});
 </script>
 
-{#each segments as s, i (i)}{s.chunk}{#if s.filler}<span class="filler" aria-hidden="true"
-			>{s.filler}</span
-		>{/if}{/each}
-
-<style>
-	.filler {
-		position: absolute;
-		opacity: 0.3;
-		font-size: 2px;
-	}
-</style>
+{#each segments as s, i (i)}{s.chunk}{#if s.filler}<Filler text={s.filler} />{/if}{/each}

@@ -43,11 +43,6 @@
 ::-webkit-scrollbar-thumb:hover {
 	background: var(--color-scrollbar-thumb-hover);
 }
-.filler {
-	position: absolute;
-	opacity: 0.3;
-	font-size: 2px;
-}
 body {
 	background-color: var(--color-bg);
 }

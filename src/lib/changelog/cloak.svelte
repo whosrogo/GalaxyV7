@@ -1,4 +1,5 @@
 <script>
+	import Filler from '$lib/utils/filler.svelte';
 	let { text } = $props();
 
 	const keywords =
@@ -19,7 +20,6 @@
 	});
 </script>
 
-{#each parts as part, i (i)}{#if part.plain !== undefined}{part.plain}{:else}{part.head}<span
-			class="filler"
-			aria-hidden="true">676767</span
-		>{part.tail}{/if}{/each}
+{#each parts as part, i (i)}{#if part.plain !== undefined}{part.plain}{:else}{part.head}<Filler
+			text="676767"
+		/>{part.tail}{/if}{/each}

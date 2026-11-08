@@ -1,4 +1,5 @@
 <script>
+	import Filler from '$lib/utils/filler.svelte';
 	import '$lib/style/settings.css';
 	import { loadSetting, saveSetting } from '$lib/utils/localspace.js';
 	import { openAboutBlank, openBlob, saveTabPreset, setAntiClose } from '$lib/utils/cloak.js';
@@ -86,12 +87,10 @@
 <div class="group">
 	<div class="subGroup">
 		<p class="subHeading">
-			Ab<span class="filler">ha67</span>out Bl<span class="filler">ha67</span>ank
+			Ab<Filler />out Bl<Filler />ank
 		</p>
 		<p class="desc">
-			Makes the tab invi<span class="filler">ha67</span>sible to teachers and your bro<span
-				class="filler">ha67</span
-			>wsing hist<span class="filler">ha67</span>ory
+			Makes the tab invi<Filler />sible to teachers and your bro<Filler />wsing hist<Filler />ory
 		</p>
 
 		<div class="content">
@@ -100,16 +99,15 @@
 		</div>
 	</div>
 	<div class="subGroup">
-		<p class="subHeading">B<span class="filler">ha67</span>lob</p>
+		<p class="subHeading">B<Filler />lob</p>
 		<p class="desc">
-			Doesn't hi<span class="filler">ha67</span>de the tab but does pre<span class="filler"
-				>ha67</span
-			>vent the site from appearing in your his<span class="filler">ha67</span>tory
+			Doesn't hi<Filler />de the tab but does pre<Filler />vent the site from appearing in your his<Filler
+			/>tory
 		</p>
 		<div class="content">
 			<button class="actionBtn" onclick={openBlob}>Launch</button>
 			<button class="toggleBtn" class:active={localAutoBlob} onclick={toggleBlob}
-				>Au<span class="filler">ha67</span>to Blob</button
+				>Au<Filler />to Blob</button
 			>
 		</div>
 	</div>
@@ -117,11 +115,10 @@
 <div class="divider"></div>
 <div class="subGroup">
 	<p class="subHeading">
-		An<span class="filler">ha67</span>ti-Clos<span class="filler">ha67</span>e
+		An<Filler />ti-Clos<Filler />e
 	</p>
 	<p class="desc">
-		Preve<span class="filler">ha67</span>nts teach<span class="filler">ha67</span>ers from closing
-		your tab by lau<span class="filler">ha67</span>nching the
+		Preve<Filler />nts teach<Filler />ers from closing your tab by lau<Filler />nching the
 		<code> `Changes you made may not be saved`</code> prompt
 	</p>
 	<div class="content">
@@ -131,7 +128,7 @@
 </div>
 <div class="divider"></div>
 <div class="subGroup">
-	<p class="subHeading">Tab Pres<span class="filler">ha67</span>ets</p>
+	<p class="subHeading">Tab Pres<Filler />ets</p>
 	<div class="content">
 		{#each tabPresets as preset}
 			<button class="actionBtn" onclick={() => saveTabPreset(preset.name, preset.icon)}>
@@ -140,7 +137,7 @@
 			</button>
 		{/each}
 	</div>
-	<p class="subHeading">Cus<span class="filler">ha67</span>tom Tab</p>
+	<p class="subHeading">Cus<Filler />tom Tab</p>
 	<input class="textInput" type="text" placeholder="Tab Name" bind:value={name} />
 	<input class="textInput" type="text" placeholder="Icon URL" bind:value={icon} />
 </div>

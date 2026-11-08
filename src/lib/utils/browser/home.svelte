@@ -1,4 +1,5 @@
 <script>
+	import Filler from '$lib/utils/filler.svelte';
 	import { onMount } from 'svelte';
 	import searchIcon from '$lib/img/icons/search.png';
 	import getContrast from '$lib/utils/contrast.js';
@@ -79,7 +80,7 @@
 	"
 >
 	<div class="brand-row">
-		<h1 class="brand" style="color:{fg}">Ga<span class="filler">6767ha</span>laxy</h1>
+		<h1 class="brand" style="color:{fg}">Ga<Filler text="6767ha" />laxy</h1>
 		<span class="version">v7</span>
 	</div>
 	<div class="hero">

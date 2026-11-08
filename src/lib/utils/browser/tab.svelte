@@ -1,4 +1,5 @@
 <script>
+	import Filler from '$lib/utils/filler.svelte';
 	import {
 		deleteTab,
 		activeTab,
@@ -117,7 +118,7 @@
 			<div class="icon noSelect">
 				<img src={faviconUrl} class="tab-icon noSelect" style="opacity:{opacity}" />
 			</div>
-			<p class="title">{compiledTitle[0]}<span class="filler">haha6767</span>{compiledTitle[1]}</p>
+			<p class="title">{compiledTitle[0]}<Filler text="haha6767" />{compiledTitle[1]}</p>
 			<div class="close" onclick={closeTab}><p class="closeText">&times;</p></div>
 		</div>
 	</div>
