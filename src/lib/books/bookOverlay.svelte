@@ -9,8 +9,8 @@
 	const src = $derived.by(() => {
 		if (!game) return '';
 		if (!proxied) return game.url;
-		const url = encodeURIComponent(new URL(game.url, 'https://gtest.5.188.124.68.nip.io/').href);
-		return `/api?url=${url}&type=glass&car=libbyRaw&autoSW=true`;
+		const url = encodeURIComponent(new URL(game.url, 'https://gtest.64.205.112.61.nip.io/').href);
+		return `/launch?resource=${url}&type=glass&car=libbyRaw&autoSW=true`;
 	});
 
 	$effect(() => {

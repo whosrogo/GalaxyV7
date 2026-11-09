@@ -1,11 +1,11 @@
 <!--
-/api?url={}&type={}&car={}&wisp={}&notif={}&autoSW={}
+/launch?resource={}&type={}&car={}&wisp={}&notif={}&autoSW={}
 
-url:       required, https:// is added when missing, must contain a dot
+resource:  required, https:// is added when missing, must contain a dot
 type:      prism (SJv2, default), polygon (SJ), glass (UV)
 car:       libbyRaw (default), libcurl, epoxy
 wisp:      wss://..., defaults to the server's own wisp
-notif:     read by /os when it opens this page in a window, not by /api itself
+notif:     read by /os when it opens this page in a window, not by /launch itself
 autoSW:    true loads on its own, false waits for a click first
 -->
 
@@ -18,7 +18,7 @@ autoSW:    true loads on its own, false waits for a click first
 	import { createConnection, setCar } from '$lib/lethe/car';
 	import { createCinnabarController } from '$lib/lethe/poly';
 	import { createPrismController, setPrismTransport, getPrismController } from '$lib/lethe/prism';
-	function normalizeUrl(raw) {
+	function normalizeResourceUrl(raw) {
 		const trimmed = (raw ?? '').trim();
 		if (!trimmed) return null;
 		const withProtocol = /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
@@ -31,9 +31,9 @@ autoSW:    true loads on its own, false waits for a click first
 		}
 	}
 
-	const api = '/api?url={}&type={}&car={}&wisp={}&notif={}&autoSW={}';
+	const api = '/launch?resource={}&type={}&car={}&wisp={}&notif={}&autoSW={}';
 	const params = [
-		['url', 'required', 'https:// added when missing'],
+		['resource', 'required', 'https:// added when missing'],
 		['type', 'prism', 'prism (sjv2), polygon (sj), glass (uv)'],
 		['car', 'libbyRaw', 'libbyRaw, libcurl(dont use), epoxy'],
 		['wisp', 'this server', 'wss://... to use another wisp'],
@@ -49,7 +49,7 @@ autoSW:    true loads on its own, false waits for a click first
 	let prismController;
 	let prismFrame;
 
-	const apiUrl = $derived(normalizeUrl($page.url.searchParams.get('url')));
+	const apiUrl = $derived(normalizeResourceUrl($page.url.searchParams.get('resource')));
 	const apiType = $derived($page.url.searchParams.get('type'));
 	const apiCar = $derived(
 		$page.url.searchParams.get('car') ?? $page.url.searchParams.get('transport')
@@ -140,7 +140,7 @@ autoSW:    true loads on its own, false waits for a click first
 			<dd><span class="fallback">{fallback}</span> — {notes}</dd>
 		{/each}
 	</dl>
-	<p class="example">/api?url=example.com&amp;type=prism&amp;car=libbyRaw</p>
+	<p class="example">/launch?resource=example.com&amp;type=prism&amp;car=libbyRaw</p>
 </div>
 
 <style>

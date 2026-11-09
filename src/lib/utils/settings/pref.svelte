@@ -138,6 +138,6 @@
 		{/each}
 	</div>
 	<p class="subHeading">Cus<Filler />tom Tab</p>
-	<input class="textInput" type="text" placeholder="Tab Name" bind:value={name} />
-	<input class="textInput" type="text" placeholder="Icon URL" bind:value={icon} />
+	<input class="textInput" type="text" placeholder="Tab name" bind:value={name} />
+	<input class="textInput" type="text" placeholder="Icon link" bind:value={icon} />
 </div>

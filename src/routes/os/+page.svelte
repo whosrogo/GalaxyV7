@@ -47,7 +47,7 @@
 	let dragging = $state(false);
 	let windowComps = [];
 	let hostname = $state(null);
-	let proApi = '%2Fapi%3Furl%3D%7Burl%7D%26type%3Dprism%26car%3DlibbyRaw%26autoSW%3Dfalse';
+	const proApi = ('/launch?resource={url}&type=prism&car=libbyRaw&autoSW=false');
 	function startNavResize(e) {
 		dragging = true;
 		temp = navSizeMulti;
@@ -85,7 +85,7 @@
 		},
 		{
 			id: 6,
-			url: '/api?url=https://tinyurl.com/ys54n4xe/&type=prism&autoSW=false',
+			url: '/launch?resource=https://tinyurl.com/ys54n4xe/&type=prism&autoSW=false',
 			name: 'GeForce',
 			icon: sp,
 			height: '50%',
@@ -427,7 +427,7 @@
 			return;
 		}
 
-		const params = new URLSearchParams({ url, type: newProxy, car: newTransport });
+		const params = new URLSearchParams({ resource: url, type: newProxy, car: newTransport });
 		if (newNotif.trim()) params.set('notif', newNotif.trim());
 		if (newWisp.trim()) params.set('wisp', newWisp.trim());
 
@@ -435,7 +435,7 @@
 		const { top, left } = nextWindowPosition();
 		customApps.push({
 			id: `custom-${Date.now()}`,
-			url: `/api?${params.toString()}`,
+			url: `/launch?${params.toString()}`,
 			name,
 			icon: newIcon.trim() || (host ? faviconFetch({ hostname: host }) : browser),
 			height: '50%',
