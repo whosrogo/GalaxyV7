@@ -67,7 +67,9 @@
 	<div class="bookMeta">
 		<span class="bookName"><FillerName text={game.name} /></span>
 		{#if game.tags.length > 0}
-			<span class="bookTag">{game.tags.slice(0, 3).map(formatTag).join(' · ')}</span>
+			<span class="bookTag">
+				<FillerName text={game.tags.slice(0, 3).map(formatTag).join(' · ')} />
+			</span>
 		{/if}
 	</div>
 </div>

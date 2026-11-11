@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { formatTag } from './catalog';
+	import FillerName from './fillerName.svelte';
 	import searchIcon from '$lib/img/icons/search.png';
 	import shuffle from '$lib/img/icons/shuffle.png';
 	import y from '$lib/img/icons/swap.png';
@@ -59,19 +60,19 @@
 			selected = [];
 		}}
 	>
-		All
+		<span><FillerName text="All" /></span>
 	</button>
 	<button class="pill" class:active={filter === 'favorites'} onclick={() => (filter = 'favorites')}>
-		Favorites
+		<span><FillerName text="Favorites" /></span>
 	</button>
 	{#each shownTags as t (t)}
 		<button class="pill" class:active={selected.includes(t)} onclick={() => toggleTag(t)}>
-			{formatTag(t)}
+			<span><FillerName text={formatTag(t)} /></span>
 		</button>
 	{/each}
 	{#if tags.length > VISIBLE_TAGS}
 		<button class="pill subtle" onclick={() => (expanded = !expanded)}>
-			{expanded ? 'Less' : `+${tags.length - VISIBLE_TAGS} More`}
+			<span><FillerName text={expanded ? 'Less' : `+${tags.length - VISIBLE_TAGS} More`} /></span>
 		</button>
 	{/if}
 
