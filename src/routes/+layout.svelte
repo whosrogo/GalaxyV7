@@ -1,5 +1,5 @@
 <script>
-	import favicon from '$lib/assets/favicon.png';
+	import favicon from '$lib/assets/favicon.ico';
 	import '$lib/style/variables.css';
 	import '$lib/style/themes.css';
 	import '$lib/style/assets.css';
@@ -11,7 +11,7 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<title>Empower Students to Do Their Best, Original Work | Turnitin</title>
+	<title>Quill.org | Interactive Writing and Grammar</title>
 </svelte:head>
 
 {@render children()}
