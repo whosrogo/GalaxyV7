@@ -75,11 +75,6 @@
 			icon: 'https://quizlet.com/_next/static/media/q-twilight.498404fc.png'
 		},
 		{
-			label: 'Turnitin',
-			name: 'Empower Students to Do Their Best, Original Work | Turnitin',
-			icon: 'https://www.turnitin.com/system/favicon/favicon.png'
-		},
-		{
 			label: 'CommonLit',
 			name: 'CommonLit | A Full ELA Program',
 			icon: 'https://cdn.prod.website-files.com/6751e31f9aaa082b0f7234ec/6751e31f9aaa082b0f7235f8_commonlit-favicon.png'
