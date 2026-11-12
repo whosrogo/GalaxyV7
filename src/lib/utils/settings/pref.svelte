@@ -51,34 +51,38 @@
 	const tabPresets = [
 		{
 			label: 'Canva',
-			name: 'Home - Canva',
+			name: 'Canva',
 			icon: 'https://static.canva.com/domain-assets/canva/static/images/favicon-1.ico'
 		},
 		{
-			label: 'Classroom',
-			name: 'Home - Classroom',
-			icon: 'https://ssl.gstatic.com/classroom/favicon.png'
-		},
-		{ label: 'Classlink', name: 'My Apps', icon: 'https://myapps.classlink.com/favicon.ico' },
-		{
-			label: 'Clever',
-			name: 'Clever | Log in with Clever',
-			icon: 'https://assets.clever.com/oauth/5dd5251fd7cf103e27c52d1b51f20683994400de/favicon.ico?1'
+			label: 'Desmos',
+			name: 'Desmos | Graphing Calculator',
+			icon: 'https://www.desmos.com/assets/img/apps/graphing/favicon.ico'
 		},
 		{
-			label: 'Drive',
-			name: 'Home - Google Drive',
-			icon: 'https://ssl.gstatic.com/docs/doclist/images/drive_favicon_2026_32dp.png'
+			label: 'Quill',
+			name: 'Quill.org | Interactive Writing and Grammar',
+			icon: 'https://assets.quill.org/images/shared/favicon.ico'
 		},
 		{
-			label: 'Google',
-			name: 'Google',
-			icon: 'https://www.gstatic.com/images/branding/searchlogo/ico/favicon.ico'
+			label: 'Quizizz',
+			name: 'Quizizz is now Wayground | Teacher AI and Resources',
+			icon: 'https://cdn.prod.website-files.com/68355113496452bf05789e95/684fb7c138384711beebeb2a_Wayground-favicon.svg'
 		},
 		{
-			label: 'Gmail',
-			name: 'Inbox',
-			icon: 'https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico'
+			label: 'Quizlet',
+			name: 'Your Sets | Quizlet',
+			icon: 'https://quizlet.com/_next/static/media/q-twilight.498404fc.png'
+		},
+		{
+			label: 'Turnitin',
+			name: 'Empower Students to Do Their Best, Original Work | Turnitin',
+			icon: 'https://www.turnitin.com/system/favicon/favicon.png'
+		},
+		{
+			label: 'CommonLit',
+			name: 'CommonLit | A Full ELA Program',
+			icon: 'https://cdn.prod.website-files.com/6751e31f9aaa082b0f7234ec/6751e31f9aaa082b0f7235f8_commonlit-favicon.png'
 		}
 	];
 </script>
