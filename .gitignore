@@ -24,6 +24,7 @@ vite.config.ts.timestamp-*
 
 #games
 static/books/
+.claude
 .claude/
 src/routes/books/curate/+page.svelte
 src/routes/books/curate/+page.ts

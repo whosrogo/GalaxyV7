@@ -17,7 +17,6 @@
 	class="bookDiv"
 	role="button"
 	tabindex="0"
-	data-zone-id={game.id}
 	onclick={open}
 	onkeydown={(e) => {
 		if (e.key === 'Enter' || e.key === ' ') {
