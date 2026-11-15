@@ -33,7 +33,9 @@
 		top,
 		left,
 		id = Date.now(),
-		sender
+		sender,
+		bottom,
+		right
 	} = $props();
 	setTop();
 	// svelte-ignore state_referenced_locally
@@ -52,7 +54,6 @@
 	//
 	//----- window drag logic -----
 	//
-
 	function setTop() {
 		topZ.update((n) => n + 1);
 		z = get(topZ);
@@ -430,6 +431,8 @@
     width: {width};
     top:{y}px;
     left:{x}px;
+    bottom:{bottom}px;
+    right:{right}px;
     z-index: {z};
 			  transition-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
     transition-duration: {transition == true ? '0.2s' : '0s'};
@@ -518,10 +521,10 @@
 
 <div
 	class="snapPreview"
-	style="z-index: {$topZ - 1}; left: {rightSplit === true ? '50%' : '100%'}; height: {document
-		.documentElement.scrollHeight -
-		taskbarHeight -
-		5}px"
+	style="
+	z-index: {$topZ - 1}; 
+	left: {rightSplit === true ? '50%' : '100%'}; 
+	height: {document.documentElement.scrollHeight - taskbarHeight - 5}px"
 ></div>
 <div
 	class="snapPreview"

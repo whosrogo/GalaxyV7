@@ -21,6 +21,7 @@
 	import p from '$lib/img/icons/pyrite.png';
 	import sp from '$lib/img/icons/nvidia.png';
 	import rp from '$lib/img/icons/ripple.png';
+	import lk from '$lib/img/icons/link.png';
 	import { get } from 'svelte/store';
 	import { applyStartupSettings } from '$lib/utils/cloak.js';
 	import gsap from 'gsap';
@@ -47,7 +48,7 @@
 	let dragging = $state(false);
 	let windowComps = [];
 	let hostname = $state(null);
-	const proApi = ('/launch?resource={url}&type=prism&car=libbyRaw&autoSW=false');
+	const proApi = '/launch?resource={url}&type=prism&car=libbyRaw&autoSW=false';
 	function startNavResize(e) {
 		dragging = true;
 		temp = navSizeMulti;
@@ -259,7 +260,7 @@
 		}
 		return false;
 	}
-	function openWindow(url, name, height, width, top, left, appId) {
+	function openWindow(url, name, height, width, top, left, appId, bottom, right) {
 		if (localStorage.getItem('firstVisit') == 'false') {
 		} else {
 			localStorage.setItem('firstVisit', 'false');
@@ -306,7 +307,9 @@
 				left,
 				id: `win-${Date.now()}`,
 				sender: appId,
-				parentApp: appId
+				parentApp: appId,
+				bottom,
+				right
 			}
 		]);
 	}
@@ -521,24 +524,16 @@
 			comp?.updateTaskbarHeight();
 		}
 	}
-	function openChangelogs() {
-		openWindow(
-			'/changelog',
-			'Changelogs',
-			'50%',
-			'600px',
-			'25',
-			'0',
-			`win-${Date.now()}`,
-			Date.now(),
-			Date.now()
-		);
-	}
+	
 </script>
 
 <div class="topNav noSelect">
 	<div class="topLeft">
-		<p onclick={openChangelogs} class="topNavText topNavHover">
+		<p
+			onclick={() =>
+				openWindow('/changelog', 'Changelogs', '50%', '600px', '25', '0', `win-${Date.now()}`)}
+			class="topNavText topNavHover"
+		>
 			Ga<Filler />la<Filler />xyV7
 		</p>
 	</div>
@@ -546,6 +541,13 @@
 	<div class="topRight">
 		<div class="topButton" onclick={switchMode}>
 			<img src={y} />
+		</div>
+		<div
+			class="topButton"
+			onclick={() =>
+				openWindow('/links', 'Links', '45%', '20%', 25, null, `win-${Date.now()}`, null, 0)}
+		>
+			<img src={lk} />
 		</div>
 		<p>{timeString}</p>
 	</div>
@@ -775,5 +777,7 @@
 		left={window.left}
 		id={window.id}
 		sender={window.sender}
+		bottom={window.bottom}
+		right={window.right}
 	/>
 {/each}
