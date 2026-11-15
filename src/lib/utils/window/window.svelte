@@ -19,6 +19,7 @@
 		activeSignal,
 		focusWindowTop
 	} from '$lib/stores/index.js';
+	import Filler from '$lib/utils/filler.svelte';
 
 	// window zindex
 	let z = $state(1);
@@ -28,6 +29,8 @@
 	let {
 		url,
 		name,
+		nameOne,
+		nameTwo,
 		height: initialHeight,
 		width: initialWidth,
 		top,
@@ -495,7 +498,13 @@
 	></div>
 	<div class="bar noSelect" style="width: 100%;">
 		<div class="bar-left">
-			<p class="window-title">{name}</p>
+			<p class="window-title">
+				{#if nameOne && nameTwo}
+					{nameOne}<Filler />{nameTwo}
+				{:else}
+					{name}
+				{/if}
+			</p>
 		</div>
 		<div class="bar-middle" onmousedown={dragStart} ondblclick={maximizeWindow}></div>
 		<div class="bar-right">

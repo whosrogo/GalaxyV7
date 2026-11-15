@@ -295,11 +295,15 @@
 				$notif = notifMsg;
 			}
 		}
+		let compiledTitle = $state([]);
+		compiledTitle = sliceText(name);
 		windowList.update((list) => [
 			...list,
 
 			{
 				url,
+				nameOne: compiledTitle[0],
+				nameTwo: compiledTitle[1],
 				name,
 				height,
 				width,
@@ -316,8 +320,9 @@
 
 	function openNewWindow(url, name, height, width, top, left, appId) {
 		let uniqueSender = `${appId}-${Date.now()}`;
-		let newName = String(name) + ' (' + getAppWindows(appId).length + ')';
-		name = newName;
+		let compiledTitle = $state([]);
+		compiledTitle = sliceText(name);
+		compiledTitle[1] = String(compiledTitle[1]) + ' (' + getAppWindows(appId).length + ')';
 		activeSignal.set(uniqueSender);
 
 		const appConfig = getAppConfig(appId);
@@ -331,6 +336,8 @@
 			...list,
 			{
 				url,
+				nameOne: compiledTitle[0],
+				nameTwo: compiledTitle[1],
 				name,
 				height,
 				width,
@@ -524,7 +531,10 @@
 			comp?.updateTaskbarHeight();
 		}
 	}
-	
+	function sliceText(text) {
+		let x = text.length / 2;
+		return [text.slice(0, x), text.slice(x)];
+	}
 </script>
 
 <div class="topNav noSelect">
@@ -734,7 +744,7 @@
 	>
 		{#each getPreviewWindows() as win}
 			<button class="previewCard noSelect" onclick={() => focusWindow(win.sender)}>
-				<p>{win.name}</p>
+				<p>{name}</p>
 			</button>
 		{/each}
 	</div>
@@ -771,6 +781,8 @@
 		bind:this={windowComps[i]}
 		url={window.url}
 		name={window.name}
+		nameOne={window.nameOne}
+		nameTwo={window.nameTwo}
 		height={window.height}
 		width={window.width}
 		top={window.top}

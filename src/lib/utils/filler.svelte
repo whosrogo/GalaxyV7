@@ -1,5 +1,5 @@
 <script lang="ts">
-let { text = 'ha67' }: { text?: string } = $props();
+	let { text = 'ha67' }: { text?: string } = $props();
 </script>
 
 <span class="shortcut" aria-hidden="true"><span>{text}</span></span>
