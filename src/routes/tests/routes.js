@@ -1,271 +1,265 @@
-// Generated: test routes in the order their parent divs appear in src/routes/os/+page.svelte.
+// Generated: cumulative rebuild of src/routes/os/+page.svelte, one element per step, in file order.
 export const groups = [
 	{
-		"id": "baseline",
-		"title": "Baseline",
-		"note": "os.css only, no markup from the os page.",
+		"id": "start",
+		"title": "Start",
+		"note": "The original <script> only, no markup.",
 		"links": [
 			{
-				"href": "/tests/baseline",
-				"tag": "baseline",
-				"label": "Empty page with os.css"
+				"href": "/tests/s00",
+				"tag": "s00",
+				"label": "Original script, no markup"
 			}
 		]
 	},
 	{
 		"id": "topnav",
 		"title": "div.topNav",
-		"note": "Top bar. Handlers stubbed; clock kept live.",
+		"note": "Top bar.",
 		"links": [
 			{
-				"href": "/tests/topnav/control",
-				"tag": "control",
-				"label": "Whole parent div"
+				"href": "/tests/s01",
+				"tag": "s01",
+				"label": "Add div.topNav (empty)"
 			},
 			{
-				"href": "/tests/topnav/s1",
-				"tag": "s1",
-				"label": "div.topNav (empty)"
-			},
-			{
-				"href": "/tests/topnav/s2",
-				"tag": "s2",
+				"href": "/tests/s02",
+				"tag": "s02",
 				"label": "Add div.topLeft (empty)"
 			},
 			{
-				"href": "/tests/topnav/s3",
-				"tag": "s3",
+				"href": "/tests/s03",
+				"tag": "s03",
 				"label": "Add p.topNavText (site title, with Fillers)"
 			},
 			{
-				"href": "/tests/topnav/s4",
-				"tag": "s4",
+				"href": "/tests/s04",
+				"tag": "s04",
 				"label": "Add div.topMiddle"
 			},
 			{
-				"href": "/tests/topnav/s5",
-				"tag": "s5",
+				"href": "/tests/s05",
+				"tag": "s05",
 				"label": "Add div.topRight (empty)"
 			},
 			{
-				"href": "/tests/topnav/s6",
-				"tag": "s6",
+				"href": "/tests/s06",
+				"tag": "s06",
 				"label": "Add div.topButton (switch mode, empty)"
 			},
 			{
-				"href": "/tests/topnav/s7",
-				"tag": "s7",
+				"href": "/tests/s07",
+				"tag": "s07",
 				"label": "Add img swap icon"
 			},
 			{
-				"href": "/tests/topnav/s8",
-				"tag": "s8",
+				"href": "/tests/s08",
+				"tag": "s08",
 				"label": "Add div.topButton (links, empty)"
 			},
 			{
-				"href": "/tests/topnav/s9",
-				"tag": "s9",
+				"href": "/tests/s09",
+				"tag": "s09",
 				"label": "Add img link icon"
 			},
 			{
-				"href": "/tests/topnav/s10",
+				"href": "/tests/s10",
 				"tag": "s10",
 				"label": "Add p clock"
 			}
 		]
 	},
 	{
-		"id": "background",
-		"title": "div.background",
-		"note": "Leaf div. s1 drops the background image.",
+		"id": "notifications",
+		"title": "<Notifications />",
+		"note": "Notification component (not a div in this file).",
 		"links": [
 			{
-				"href": "/tests/background/control",
-				"tag": "control",
-				"label": "Whole parent div"
-			},
+				"href": "/tests/s11",
+				"tag": "s11",
+				"label": "Add <Notifications />"
+			}
+		]
+	},
+	{
+		"id": "window-events",
+		"title": "<svelte:window>",
+		"note": "Window click / Escape handlers (not a div).",
+		"links": [
 			{
-				"href": "/tests/background/s1",
-				"tag": "s1",
-				"label": "div.background with class only (no background image)"
-			},
+				"href": "/tests/s12",
+				"tag": "s12",
+				"label": "Add <svelte:window> handlers"
+			}
+		]
+	},
+	{
+		"id": "background",
+		"title": "div.background",
+		"note": "Background image. No child elements.",
+		"links": [
 			{
-				"href": "/tests/background/s2",
-				"tag": "s2",
-				"label": "Add style background-image (original)"
+				"href": "/tests/s13",
+				"tag": "s13",
+				"label": "Add div.background"
 			}
 		]
 	},
 	{
 		"id": "contextmenu",
 		"title": "div.contextMenu",
-		"note": "Opens on load (normally right-click only). Shows the app branch; nav-branch shows the other one.",
+		"note": "Hidden on load in the original (opens only after interaction), so these steps change markup but not the initial render.",
 		"links": [
 			{
-				"href": "/tests/contextmenu/control",
-				"tag": "control",
-				"label": "Whole parent div"
+				"href": "/tests/s14",
+				"tag": "s14",
+				"label": "Add div.contextMenu (empty)"
 			},
 			{
-				"href": "/tests/contextmenu/s1",
-				"tag": "s1",
-				"label": "div.contextMenu (empty)"
+				"href": "/tests/s15",
+				"tag": "s15",
+				"label": "Add button \"Open New Window\""
 			},
 			{
-				"href": "/tests/contextmenu/s2",
-				"tag": "s2",
-				"label": "Add button \"Open New Window\" (app branch)"
+				"href": "/tests/s16",
+				"tag": "s16",
+				"label": "Add button \"Remove App\""
 			},
 			{
-				"href": "/tests/contextmenu/s3",
-				"tag": "s3",
-				"label": "Add button \"Remove App\" (app branch, custom apps)"
-			},
-			{
-				"href": "/tests/contextmenu/s4",
-				"tag": "s4",
-				"label": "Add button \"Add New App\" (nav branch; markup only, does not render while menuType is 'app')"
-			},
-			{
-				"href": "/tests/contextmenu/nav-branch",
-				"tag": "nav-branch",
-				"label": "Control with menuType = 'nav' (renders the Add New App branch)"
+				"href": "/tests/s17",
+				"tag": "s17",
+				"label": "Add button \"Add New App\""
 			}
 		]
 	},
 	{
 		"id": "modal",
 		"title": "div.modalOverlay",
-		"note": "Opens on load with the advanced panel and error line shown.",
+		"note": "Hidden on load in the original (opens only after interaction), so these steps change markup but not the initial render.",
 		"links": [
 			{
-				"href": "/tests/modal/control",
-				"tag": "control",
-				"label": "Whole parent div"
+				"href": "/tests/s18",
+				"tag": "s18",
+				"label": "Add div.modalOverlay (empty)"
 			},
 			{
-				"href": "/tests/modal/s1",
-				"tag": "s1",
-				"label": "div.modalOverlay (empty)"
-			},
-			{
-				"href": "/tests/modal/s2",
-				"tag": "s2",
+				"href": "/tests/s19",
+				"tag": "s19",
 				"label": "Add div.modal (empty, with entrance animation)"
 			},
 			{
-				"href": "/tests/modal/s3",
-				"tag": "s3",
+				"href": "/tests/s20",
+				"tag": "s20",
 				"label": "Add p.modalTitle \"Add App\""
 			},
 			{
-				"href": "/tests/modal/s4",
-				"tag": "s4",
+				"href": "/tests/s21",
+				"tag": "s21",
 				"label": "Add p.modalLabel \"URL\""
 			},
 			{
-				"href": "/tests/modal/s5",
-				"tag": "s5",
+				"href": "/tests/s22",
+				"tag": "s22",
 				"label": "Add input URL"
 			},
 			{
-				"href": "/tests/modal/s6",
-				"tag": "s6",
+				"href": "/tests/s23",
+				"tag": "s23",
 				"label": "Add p.modalLabel \"Name\""
 			},
 			{
-				"href": "/tests/modal/s7",
-				"tag": "s7",
+				"href": "/tests/s24",
+				"tag": "s24",
 				"label": "Add input Name"
 			},
 			{
-				"href": "/tests/modal/s8",
-				"tag": "s8",
+				"href": "/tests/s25",
+				"tag": "s25",
 				"label": "Add p.modalLabel \"Icon\""
 			},
 			{
-				"href": "/tests/modal/s9",
-				"tag": "s9",
+				"href": "/tests/s26",
+				"tag": "s26",
 				"label": "Add input Icon"
 			},
 			{
-				"href": "/tests/modal/s10",
-				"tag": "s10",
-				"label": "Add button.advancedToggle \"Advanced\" (with arrow span)"
+				"href": "/tests/s27",
+				"tag": "s27",
+				"label": "Add button.advancedToggle (with arrow span)"
 			},
 			{
-				"href": "/tests/modal/s11",
-				"tag": "s11",
+				"href": "/tests/s28",
+				"tag": "s28",
 				"label": "Add div.advancedPanel (empty, with animation)"
 			},
 			{
-				"href": "/tests/modal/s12",
-				"tag": "s12",
+				"href": "/tests/s29",
+				"tag": "s29",
 				"label": "Add p.modalLabel (1st advanced label, with Fillers)"
 			},
 			{
-				"href": "/tests/modal/s13",
-				"tag": "s13",
+				"href": "/tests/s30",
+				"tag": "s30",
 				"label": "Add div.modalOptions (1st option row, empty)"
 			},
 			{
-				"href": "/tests/modal/s14",
-				"tag": "s14",
+				"href": "/tests/s31",
+				"tag": "s31",
 				"label": "Add button.modalOption per option (1st row)"
 			},
 			{
-				"href": "/tests/modal/s15",
-				"tag": "s15",
+				"href": "/tests/s32",
+				"tag": "s32",
 				"label": "Add p.modalLabel (2nd advanced label, with Fillers)"
 			},
 			{
-				"href": "/tests/modal/s16",
-				"tag": "s16",
+				"href": "/tests/s33",
+				"tag": "s33",
 				"label": "Add div.modalOptions (2nd option row, empty)"
 			},
 			{
-				"href": "/tests/modal/s17",
-				"tag": "s17",
+				"href": "/tests/s34",
+				"tag": "s34",
 				"label": "Add button.modalOption per option (2nd row)"
 			},
 			{
-				"href": "/tests/modal/s18",
-				"tag": "s18",
+				"href": "/tests/s35",
+				"tag": "s35",
 				"label": "Add p.modalLabel (3rd advanced label, with Filler)"
 			},
 			{
-				"href": "/tests/modal/s19",
-				"tag": "s19",
+				"href": "/tests/s36",
+				"tag": "s36",
 				"label": "Add input (3rd advanced field)"
 			},
 			{
-				"href": "/tests/modal/s20",
-				"tag": "s20",
+				"href": "/tests/s37",
+				"tag": "s37",
 				"label": "Add p.modalLabel \"Open Notification\""
 			},
 			{
-				"href": "/tests/modal/s21",
-				"tag": "s21",
+				"href": "/tests/s38",
+				"tag": "s38",
 				"label": "Add input Open Notification"
 			},
 			{
-				"href": "/tests/modal/s22",
-				"tag": "s22",
+				"href": "/tests/s39",
+				"tag": "s39",
 				"label": "Add p.modalError"
 			},
 			{
-				"href": "/tests/modal/s23",
-				"tag": "s23",
+				"href": "/tests/s40",
+				"tag": "s40",
 				"label": "Add div.modalActions (empty)"
 			},
 			{
-				"href": "/tests/modal/s24",
-				"tag": "s24",
+				"href": "/tests/s41",
+				"tag": "s41",
 				"label": "Add button \"Cancel\""
 			},
 			{
-				"href": "/tests/modal/s25",
-				"tag": "s25",
+				"href": "/tests/s42",
+				"tag": "s42",
 				"label": "Add button \"Add\""
 			}
 		]
@@ -273,26 +267,21 @@ export const groups = [
 	{
 		"id": "preview",
 		"title": "div#previewPanel",
-		"note": "Opens on load with two stub windows.",
+		"note": "Hidden on load in the original (opens only after interaction), so these steps change markup but not the initial render.",
 		"links": [
 			{
-				"href": "/tests/preview/control",
-				"tag": "control",
-				"label": "Whole parent div"
+				"href": "/tests/s43",
+				"tag": "s43",
+				"label": "Add div#previewPanel (empty, with animation and mouse handlers)"
 			},
 			{
-				"href": "/tests/preview/s1",
-				"tag": "s1",
-				"label": "div#previewPanel (empty, with animation and mouse handlers)"
-			},
-			{
-				"href": "/tests/preview/s2",
-				"tag": "s2",
+				"href": "/tests/s44",
+				"tag": "s44",
 				"label": "Add button.previewCard per window (empty)"
 			},
 			{
-				"href": "/tests/preview/s3",
-				"tag": "s3",
+				"href": "/tests/s45",
+				"tag": "s45",
 				"label": "Add p {name}"
 			}
 		]
@@ -300,37 +289,44 @@ export const groups = [
 	{
 		"id": "nav",
 		"title": "div.nav",
-		"note": "Dock. Buttons fade in via the original gsap animation.",
+		"note": "Dock.",
 		"links": [
 			{
-				"href": "/tests/nav/control",
-				"tag": "control",
-				"label": "Whole parent div"
+				"href": "/tests/s46",
+				"tag": "s46",
+				"label": "Add div.nav (empty, with height style)"
 			},
 			{
-				"href": "/tests/nav/s1",
-				"tag": "s1",
-				"label": "div.nav (empty, with height style)"
-			},
-			{
-				"href": "/tests/nav/s2",
-				"tag": "s2",
+				"href": "/tests/s47",
+				"tag": "s47",
 				"label": "Add div.navResize"
 			},
 			{
-				"href": "/tests/nav/s3",
-				"tag": "s3",
+				"href": "/tests/s48",
+				"tag": "s48",
 				"label": "Add div.navStuff (empty, with context-menu handler)"
 			},
 			{
-				"href": "/tests/nav/s4",
-				"tag": "s4",
+				"href": "/tests/s49",
+				"tag": "s49",
 				"label": "Add button.navButton per app (empty, all attributes)"
 			},
 			{
-				"href": "/tests/nav/s5",
-				"tag": "s5",
+				"href": "/tests/s50",
+				"tag": "s50",
 				"label": "Add img.navIcon"
+			}
+		]
+	},
+	{
+		"id": "windows",
+		"title": "<Window> list",
+		"note": "Renders one <Window> per open window; empty on load (not a div in this file).",
+		"links": [
+			{
+				"href": "/tests/s51",
+				"tag": "s51",
+				"label": "Add {#each $windowList} <Window> list"
 			}
 		]
 	}

@@ -4,7 +4,8 @@
 	import { onMount } from 'svelte';
 	import { groups } from './routes.js';
 
-	const KEY = 'divTests.opened.v1';
+	// v2: cumulative rebuild routes (s00..). v1 tracked the old per-div routes.
+	const KEY = 'divTests.opened.v2';
 	const all = groups.flatMap((g) => g.links);
 
 	let opened = $state({}); // href -> timestamp of last open
@@ -118,7 +119,7 @@
 
 	<main class="main">
 		<header class="head">
-			<h1>Div tests</h1>
+			<h1>Rebuild tests</h1>
 
 			<div class="progress">
 				<div class="bar"><div class="fill" style="width: {(openedCount / all.length) * 100}%"></div></div>
@@ -188,7 +189,7 @@
 										onclick={() => markOpened(l.href)}
 										onauxclick={(e) => e.button === 1 && markOpened(l.href)}
 									>
-										<span class="tag" class:control={l.tag === 'control'}>{l.tag}</span>
+										<span class="tag" class:control={l.tag === 's00'}>{l.tag}</span>
 										<span class="label">{l.label}</span>
 										<span class="meta">
 											{#if lastHref === l.href}<span class="lastBadge">last opened</span>{/if}
