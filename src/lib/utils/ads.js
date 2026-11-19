@@ -12,8 +12,7 @@ let sites = [
 	'https://araplhn.org/4/c17e8db5fc874a1f77e37b705315820c', //earthhatch.com, Books
 	'https://budgetezy.org/4/6020dd11f219f3460e56b19d3d8cbfd2', //elor.site, Sport Streaming
 	'https://directyp.org/4/6ead45174ffa772cf9c8ccd90721ad19', //isokrat.info, Movies
-	'https://asiafilm.org/4/36f77b48f0bb7067c5e26817d846f6ea', //Smartlink_17
-	'https://www.profitableratecpmnetwork.com/rpgnbe9w4?key=6881696359ce8cfaeb78dcf6520baac5' //melitha
+	'https://asiafilm.org/4/36f77b48f0bb7067c5e26817d846f6ea' //Smartlink_17
 ];
 export function launchAds() {
 	if (location.hostname.includes('localhost')) {
