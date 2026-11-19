@@ -193,7 +193,7 @@
 	});
 	let navMounted = false;
 	let navIndex = 0;
-	function animateNavButton(node) {
+	function animateDockItem(node) {
 		const delay = navMounted ? 0 : 0.1 + navIndex++ * 0.09;
 		gsap.fromTo(
 			node,
@@ -759,8 +759,8 @@
 	<div class="navStuff noSelect" oncontextmenu={(e) => openMenu(e, 'navBar')}>
 		{#each apps as app (app.id)}
 			<button
-				class="navButton"
-				{@attach animateNavButton}
+				class="dockItem"
+				{@attach animateDockItem}
 				class:active={isAppActive(app.id)}
 				class:hasMinimized={hasMinimizedWindow(app.id) || getAppWindows(app.id).length > 0}
 				onclick={() =>

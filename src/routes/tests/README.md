@@ -57,6 +57,6 @@ Nothing is stubbed: every route runs the original script unchanged. The context 
 | `/tests/s46` | div.nav (empty, with height style) (div.nav) |
 | `/tests/s47` | div.navResize (div.nav) |
 | `/tests/s48` | div.navStuff (empty, with context-menu handler) (div.nav) |
-| `/tests/s49` | button.navButton per app (empty, all attributes) (div.nav) |
+| `/tests/s49` | button.dockItem per app (empty, all attributes) (div.nav) |
 | `/tests/s50` | img.navIcon (div.nav) |
 | `/tests/s51` | {#each $windowList} <Window> list (<Window> list) |

@@ -309,7 +309,7 @@ export const groups = [
 			{
 				"href": "/tests/s49",
 				"tag": "s49",
-				"label": "Add button.navButton per app (empty, all attributes)"
+				"label": "Add button.dockItem per app (empty, all attributes)"
 			},
 			{
 				"href": "/tests/s50",

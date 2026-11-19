@@ -91,7 +91,7 @@ html {
 	background-position: center center;
 }
 
-.navButton {
+.dockItem {
 	opacity: 0;
 	position: relative;
 	height: 80%;
@@ -103,13 +103,13 @@ html {
 	padding: 0;
 	filter: brightness(0.85);
 }
-.navButton:hover {
+.dockItem:hover {
 	background-color: var(--overlay-hover-strong);
 }
-.navButton.active {
+.dockItem.active {
 	background-color: var(--overlay-hover);
 }
-.navButton.hasMinimized::after {
+.dockItem.hasMinimized::after {
 	content: '';
 	position: absolute;
 	bottom: -2px;
@@ -126,7 +126,7 @@ html {
 	transition-duration: 0.15s;
 	margin-top: 3px;
 }
-.navButton:active .navIcon {
+.dockItem:active .navIcon {
 	transform: scale(0.8);
 }
 .contextMenu {

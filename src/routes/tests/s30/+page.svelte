@@ -193,7 +193,7 @@
 	});
 	let navMounted = false;
 	let navIndex = 0;
-	function animateNavButton(node) {
+	function animateDockItem(node) {
 		const delay = navMounted ? 0 : 0.1 + navIndex++ * 0.09;
 		gsap.fromTo(
 			node,
