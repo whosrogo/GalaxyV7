@@ -343,7 +343,7 @@
 		if (document.fullscreenElement) {
 			document.exitFullscreen();
 		} else {
-			const iframes = document.querySelectorAll('.frameContainer iframe');
+			const iframes = document.querySelectorAll('.fcontainer iframe');
 			const activeIframe = Array.from(iframes).find((el) => el.offsetParent !== null);
 			if (activeIframe) {
 				activeIframe.requestFullscreen();
@@ -383,9 +383,9 @@
 		{@const frame = frames.find((frame) => frame.id === tab.id)}
 		<Tab id={tab.id} title={frame.title} displayUrl={frame?.displayUrl ?? ''} onDrop={moveTab} />
 	{/each}
-	<div class="newTab noSelect" onclick={addTab}><p class="plus">+</p></div>
+	<div class="newtb noSelect" onclick={addTab}><p class="plus">+</p></div>
 </div>
-<div class="nav-bar noSelect">
+<div class="tool-bar noSelect">
 	<div class="nav-left">
 		<div class="button" onclick={goBack}>
 			<img src={back} class="nav-icon noSelect" />
@@ -414,7 +414,7 @@
 				disabled={!ready}
 			/>
 			<div class="star" onclick={startBookmark}>
-				<img class="starIcon noSelect" src={star} />
+				<img class="starI noSelect" src={star} />
 			</div>
 		</form>
 		{#if bookmarkMenu}
@@ -526,7 +526,7 @@
 	</div>
 {/if}
 
-<div class="frameContainer">
+<div class="fcontainer">
 	{#each frames as frame (frame.id)}
 		<Iframe
 			id={frame.id}

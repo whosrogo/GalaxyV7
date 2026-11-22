@@ -85,8 +85,8 @@
 	</div>
 	<div class="hero">
 		<p class="greeting" style="color:{fg}">{greeting} &middot; {clock}</p>
-		<form class="home-search" onsubmit={submitSearch}>
-			<img src={searchIcon} class="home-search-icon" />
+		<form class="hsrch" onsubmit={submitSearch}>
+			<img src={searchIcon} class="hsrch-icon" />
 			<input
 				class="noSelect"
 				type="text"
@@ -202,13 +202,13 @@
 		color: var(--color-text);
 	}
 
-	.home-search {
+	.hsrch {
 		position: relative;
 		width: 100%;
 		display: flex;
 		align-items: center;
 	}
-	.home-search-icon {
+	.hsrch-icon {
 		position: absolute;
 		left: 18px;
 		height: 16px;
@@ -220,7 +220,7 @@
 		user-select: none; /* Standard syntax */
 		-webkit-user-drag: none; /* Chrome, Safari */
 	}
-	.home-search input {
+	.hsrch input {
 		width: 100%;
 		height: 52px;
 		border: 1px solid var(--color-border);
@@ -236,13 +236,13 @@
 			border-color 0.18s,
 			box-shadow 0.18s;
 	}
-	.home-search input::placeholder {
+	.hsrch input::placeholder {
 		color: var(--color-text-subtle);
 	}
-	.home-search input:focus {
+	.hsrch input:focus {
 		border: 1px solid var(--color-border-strong);
 	}
-	.home-search input:disabled {
+	.hsrch input:disabled {
 		opacity: 0.55;
 		cursor: not-allowed;
 	}
