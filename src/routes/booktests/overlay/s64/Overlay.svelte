@@ -150,9 +150,11 @@
 		text-overflow: ellipsis;
 	}
 
+	/* Capped at 70vw x 70vh; auto margins center it in the space below the toolbar. */
 	iframe {
-		flex: 1;
-		width: 100%;
+		width: 70vw;
+		height: 70vh;
+		margin: auto;
 		border: none;
 		background: var(--color-black);
 	}

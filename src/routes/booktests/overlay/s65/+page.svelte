@@ -6,7 +6,12 @@
 
 	// Crossy Road's entry from static/books/gmes.json, normalized exactly like the catalog loader does.
 	const example = normalize([
-		{ file_name: 'crossy-road/index.html', title: 'Crossy Road', thumb: 'thumbs/crossy-road.webp', tags: ['arcade'] }
+		{
+			file_name: 'crossy-road/index.html',
+			title: 'Crossy Road',
+			thumb: 'thumbs/crossy-road.webp',
+			tags: ['arcade']
+		}
 	])[0];
 
 	// Same wiring as the books page: the overlay is open while a book is active; Back / Escape clears it.
