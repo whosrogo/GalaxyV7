@@ -5,10 +5,10 @@
 	let { game, onclose }: { game: Game | null; onclose: () => void } = $props();
 
 	let frame = $state<HTMLIFrameElement>();
-	let proxied = $state(false);
+	let routed = $state(false);
 	const src = $derived.by(() => {
 		if (!game) return '';
-		if (!proxied) return game.url;
+		if (!routed) return game.url;
 		const url = encodeURIComponent(new URL(game.url, 'https://gtest.64.205.112.61.nip.io/').href);
 		return `/launch?resource=${url}&type=glass&car=libbyRaw&autoSW=true`;
 	});
@@ -22,7 +22,7 @@
 
 	$effect(() => {
 		game;
-		proxied = false;
+		routed = false;
 	});
 
 	function requestFullscreen() {
@@ -57,7 +57,7 @@
 
 			<span class="title"><FillerName text={game.name} /></span>
 
-			<button class="tbtn" class:active={proxied}>
+			<button class="tbtn" class:active={routed}>
 			</button>
 		</div>
 	</div>

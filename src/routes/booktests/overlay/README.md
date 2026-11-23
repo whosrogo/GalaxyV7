@@ -37,7 +37,7 @@ Note: the book files are not in this repo (`static/books/` has no `gmes/` folder
 | `/booktests/overlay/s24` | FillerName with the book name | Title |
 | `/booktests/overlay/s25` | <button> mode toggle (bare) | Mode toggle button |
 | `/booktests/overlay/s26` | class="tbtn" | Mode toggle button |
-| `/booktests/overlay/s27` | class:active={proxied} | Mode toggle button |
+| `/booktests/overlay/s27` | class:active={routed} | Mode toggle button |
 | `/booktests/overlay/s28` | onclick (toggle mode) | Mode toggle button |
 | `/booktests/overlay/s29` | <svg> globe (bare) | Mode toggle button |
 | `/booktests/overlay/s30` | viewBox | Mode toggle button |

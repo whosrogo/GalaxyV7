@@ -185,7 +185,7 @@ export const groups = [
 			{
 				"href": "/booktests/overlay/s27",
 				"tag": "s27",
-				"label": "Add class:active={proxied}"
+				"label": "Add class:active={routed}"
 			},
 			{
 				"href": "/booktests/overlay/s28",
